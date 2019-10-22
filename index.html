@@ -1,0 +1,2727 @@
+<html>
+
+    <style>
+
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: azure;
+        }
+    
+    </style>
+
+    <header>
+
+    </header>
+
+    <body>
+
+        <!--Jumbotron-->
+        <div class="jumbotron text-center">
+            <h1>EU4 MODDING PROJECT</h1>
+            <p>COUNTRY MAKER</p>
+        </div>
+
+        <div class="container p-5">
+
+            <!--Introduction text-->
+            <p>Here you will find all of the steps to create a new country in Europa Universalis 4.</p>
+            <hr>
+
+            <!--SECTION 1-->
+            <p><b><h2>SECTION 1: COUNTRY TAG</h2></b></p>
+            <hr>
+
+            <!--First step title-->
+            <p><b>(1) CREATE A UNIQUE TAG FOR YOUR COUNTRY</b></p>
+
+            <!--First step description-->
+            <p>A proper tag must be unique. It cannot be shared with any other country in the game. A proper tag must be three letters long. It cannot contain any non-alphabetical characters. The utility below will help you find a unique tag. Simply enter your desired tag and you will be notified if the tag is available or not.</p>
+            
+            <!--First step tag utility-->
+            <div class="input-group mb-3">
+                <input type="text" id = "tagUtility" class="form-control" onblur="checkAvailabilityTag()" aria-describedby="checkAvailability">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="checkTag" onClick = "checkAvailabilityTag()">CHECK AVAILABILITY</button>
+                </div>
+            </div>
+            
+            <!--Success or fail alert-->
+            <div class="alert alert-primary" id = "alertContainerTag" style='visibility:hidden; display:none;' role="alert"></div>
+            <hr>
+
+            <!--Second step title-->
+            <p><b>(2) CREATE A UNIQUE NAME FOR YOUR COUNTRY</b></p>
+            
+            <!--Second step description-->
+            <p>Once you have a unique tag, it's time to create the name of your country. Like the tag, the country name has to be unique. The utility below will help you find a unique country name. SImply enter your desired name and you will be notified if the name is available or not.</p>
+            
+            <!--Second step name utility-->
+            <div class="input-group mb-3">
+                <input type="text" id = "nameUtility" class="form-control" onblur="checkAvailabilityName()" aria-describedby="checkAvailability">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="checkName" onClick = "checkAvailabilityName()">CHECK AVAILABILITY</button>
+                </div>
+            </div>
+            
+            
+            <!--Success or fail alert-->
+            <div class="alert alert-primary" id = "alertContainerName" style='visibility:hidden; display:none;' role="alert"></div>
+            <hr>
+
+            <!--First file title-->
+            <p id = "file1Name"><b>FILE NAME:</b></p>
+
+            <!--First file contents-->
+            <textarea class="form-control" id="file1"></textarea>
+            <br>
+
+            <!--First file buttons-->
+            <button class = "btn btn-primary" id="file1Info" onClick = "fileInfo('file1')" type="button"><i>Where to save?</i></button>
+            <a href="" class="btn btn-primary" id="download">DOWNLOAD</a>
+            <button class = "btn btn-primary" id="file1Copy" onClick = "fileCopy('file1')">COPY</button>
+            <br><br>
+
+            <!--Success or fail alert-->
+            <div class="alert alert-primary" id = "alertContainerFile1" style='visibility:hidden; display:none;' role="alert"></div>
+            <hr>
+            
+            <!--SECTION 2-->
+            <p><b><h2>SECTION 2: COUNTRY INFORMATION</h2></b></p>
+            <hr>
+
+            <!--First step title-->
+            <p><b>(1) DEFINE THE GRAPHICAL CULTURE</b></p>
+
+            <!--First step description-->
+            <p>A graphical culture determines what kind of units and advisor portraits your country will have access to. The utility below will show you your options for selecting a graphical culture. Generally, you'll want to match the graphical culture with the cooresponding location of the country.</p>
+            
+            <!--First step utility-->
+            <select class="custom-select" id = "graphicalCulture">
+                <option selected disabled>Graphical Culture</option>
+                <option value="westerngfx">Western</option>
+                <option value="easterngfx">Eastern</option>
+                <option value="muslimgfx">Muslim</option>
+                <option value="indiangfx">Indian</option>
+                <option value="asiangfx">Asian</option>
+                <option value="africangfx">African</option>
+                <option value="northamericagfx">North American</option>
+                <option value="southamericagfx">South American</option>
+                <option value="inuitgfx">Inuit</option>
+            </select>
+            <hr>
+
+            <!--Second step title-->
+            <p><b>(2) DEFINE THE COUNTRY COLOR</b></p>
+
+            <!--Second step description-->
+            <p>A country color determines what color the country will appear as in the game. In the utility below, you may choose the red, green, and blue values for the color. Values for these fields must be between 0 and 255. A display of the resulting color appears below.</p>
+
+            <!--Second step utility-->
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">RED</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">GREEN</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">BLUE</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" id = "redInput" class="form-control" value = "0" onblur="updateColor('red')">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class = "rounded" style="border:18px solid rgb(0, 0, 0);" id = "redPreview"></div>
+                        </td>
+                        <td>
+                            <b><h4>+</h4></b>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" id = "greenInput" class="form-control" value = "0" onblur="updateColor('green')">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class = "rounded" style="border:18px solid rgb(0, 0, 0);" id = "greenPreview"></div>
+                        </td>
+                        <td>
+                            <b><h4>+</h4></b>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" id = "blueInput" class="form-control" value = "0" onblur="updateColor('blue')">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class = "rounded" style="border:18px solid rgb(0, 0, 0);" id = "bluePreview"></div>
+                        </td>
+                        <td>
+                            <b><h4>=</h4></b>
+                        </td>
+                        <td>
+                            <div class = "rounded" style="border:18px solid rgb(0, 0, 0);" id = "resultPreview"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+
+            <!--Third step title-->
+            <p><b>(3) DEFINE THE HISTORICAL IDEA GROUPS</b></p>
+
+            <!--Third step description-->
+            <p>A country's historical ideas groups define what idea groups will be selected depending on the state date. Non-1444 start dates will use this to fill in idea groups for this country. This will not determine which idea groups the AI country actually picks during play starting from 1444.</p>
+            
+            <!--Third step utility | Historical Idea Group 1-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup1">Group 1:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup1">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+
+            </div>
+
+            <!--Third step utility | Historical Idea Group 2-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup2">Group 2:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup2">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group 3-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup3">Group 3:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup3">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group 4-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup4">Group 4:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup2">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group 5-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup5">Group 5:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup5">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group 6-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup6">Group 6:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup6">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group 7-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup7">Group 7:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup7">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <!--Third step utility | Historical Idea Group -->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalGroup8">Group 8:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalGroup8">
+
+                    <option selected disabled>Please pick an idea group.</option>
+
+                    <optgroup label="Administrative Groups">
+
+                        <option value="administrative_ideas">Administrative</option>
+                        <option value="economic_ideas">Economic</option>
+                        <option value="expansion_ideas">Expansion</option>
+                        <option value="humanist_ideas">Humanist</option>
+                        <option value="innovativeness_ideas">Innovative</option>
+                        <option value="religious_ideas">Religious</option>
+
+                    </optgroup>
+
+                    <optgroup label="Diplomatic Groups">
+                    
+                        <option value="diplomatic_ideas">Diplomatic</option>
+                        <option value="spy_ideas">Espionage</option>
+                        <option value="exploration_ideas">Exploration</option>
+                        <option value="influence_ideas">Influence</option>
+                        <option value="maritime_ideas">Maritime</option>
+                        <option value="trade_ideas">Trade</option>
+
+                    </optgroup>
+
+                    <optgroup label="Military Groups">
+                    
+                        <option value="aristocracy_ideas">Aristocratic</option>
+                        <option value="defensive_ideas">Defensive</option>
+                        <option value="naval_ideas">Naval</option>
+                        <option value="offensive_ideas">Offensive</option>
+                        <option value="plutocracy_ideas">Plutocratic</option>
+                        <option value="quality_ideas">Quality</option>
+                        <option value="quantity_ideas">Quantity</option>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+            <hr>
+
+            <!--Fourth step title-->
+            <p><b>(4) DEFINE THE HISTORICAL UNITS</b></p>
+
+            <!--Fourth step description-->
+            <p>A country's historical units will determine what units the AI version of your country uses when it has access to them. In the utility below, first select the unit group that you'd like your country to have access to and then select which units your country should prefer from that group.</p>
+            
+            <!--Fourth step utility-->
+            <div class="input-group mb-3">
+
+                <div class="input-group-prepend">
+
+                    <label class="input-group-text" for="historicalUnit1">Historical Unit:</label>
+
+                </div>
+
+                <select class="custom-select" id = "historicalUnitGroupSelect" onchange="getUnitGroupUtility()">
+
+                    <option selected disabled>Please pick a unit group.</option>
+
+                        <optgroup label="Historical Units">
+
+                            <option value="africanGroup">African Units</option>
+                            <option value="anatolianGroup">Anatolian Units</option>
+                            <option value="chineseGroup">Chinese Units</option>
+                            <option value="easternGroup">Eastern European Units</option>
+                            <option value="indianGroup">Indian Units</option>
+                            <option value="muslimGroup">Muslim Units</option>
+                            <option value="mesoamericanGroup">Mesoamerican Units</option>
+                            <option value="nomadGroup">Nomad Units</option>
+                            <option value="northAmericanGroup">North American Units</option>
+                            <option value="southAmericanGroup">South American Units</option>
+                            <option value="westernGroup">Western European Units</option>
+
+                        </optgroup>
+
+                        <optgroup label="Fantasy Units">
+
+                            <option value="highAmericanGroup">High American Units</option>
+
+                        </optgroup>
+
+                    </optgroup>
+                    
+                </select>
+                
+            </div>
+
+            <hr>
+
+            <div id = "anatolianUnits" style="visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">Anatolian units have no infantry options.</div>
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="anatolianCavMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "anatolianCavMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Eastern Skirmisher">Eastern Skirmisher</option>
+                            <option value="Eastern Uhlan">Eastern Uhlan</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="anatolianCavMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "anatolianCavMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Reformed Lancer">Reformed Lancer</option>
+                            <option value="Toprakli Dragoons">Toprakli Dragoons</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+            </div>
+
+            <div id = "africanUnits" style="visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="africanUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "africanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="African Clubmen">African Clubmen</option>
+                            <option value="African Spearmen">African Spearmen</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanUnitsMIL5">MIL Tech 05 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Central African Warrior">Central African Warrior</option>
+                            <option value="North African Warrior">North African Warrior</option>
+                            <option value="South African Warrior">South African Warrior</option>
+                            <option value="West African Warrior">West African Warrior</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanUnitsMIL12">MIL Tech 12 Unit:</label>
+                
+                    </div>
+        
+                    <select class="custom-select" id = "africanUnitsMIL12">
+        
+                        <option selected disabled>Please select a unit.</option>
+            
+                            <option value="African Forest Warriors">African Forest Warriors</option>
+                            <option value="African Hill Warriors">African Hill Warriors</option>
+                            <option value="African Mountain Warriors">African Mountain Warriors</option>
+                            <option value="African Plains Warriors">African Plains Warriors</option>
+                                
+                        </optgroup>
+                                
+                    </select>
+                        
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanUnitsMIL15">MIL Tech 15 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanUnitsMIL15">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Central African Musketeers">Central African Musketeers</option>
+                            <option value="East African Musketeers">East African Musketeers</option>
+                            <option value="North African Musketeers">North African Musketeers</option>
+                            <option value="South African Musketeers">South African Musketeers</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanUnitsMIL23">MIL Tech 23 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanUnitsMIL23">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Central African Guerrillas">Central African Guerrillas</option>
+                            <option value="East African Guerrillas">East African Guerrillas</option>
+                            <option value="North African Guerrillas">North African Guerrillas</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanUnitsMIL26">MIL Tech 26 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanUnitsMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Westernized Central African Infantry">Westernized Central African Infantry</option>
+                            <option value="Westernized East African Infantry">Westernized East African Infantry</option>
+                            <option value="Westernized North African Infantry">Westernized North African Infantry</option>
+                            <option value="Westernized South African Infantry">Westernized South African Infantry</option>
+
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanCavMIL1">MIL Tech 01 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanCavMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Abyssinian Light Cavalry">Abyssinian Light Cavalry</option>
+                            <option value="Mandekalu Cavalry">Mandekalu Cavalry</option>
+
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanCavMIL6">MIL Tech 06 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanCavMIL6">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Somali Light Cavalry">Somali Light Cavalry</option>
+                            <option value="Tuareg Cavalry">Tuareg Cavalry</option>
+
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+            
+                        <label class="input-group-text" for="africanCavMIL10">MIL Tech 10 Unit:</label>
+            
+                    </div>
+
+                    <select class="custom-select" id = "africanCavMIL10">
+
+                        <option selected disabled>Please select a unit.</option>
+        
+                            <option value="Abyssinian Barded Cavalry">Abyssinian Barded Cavalry</option>
+                            <option value="Mossi Horsemen">Mossi Horsemen</option>
+
+                        </optgroup>
+                            
+                    </select>
+                    
+                </div>
+
+            </div>
+
+            <div id = "chineseUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="chineseUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "chineseUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Asian Longbow">Asian Longbow</option>
+                            <option value="Asian Longspear">Asian Longspear</option>
+                            <option value="East Asian Spearmen">East Asian Spearmen</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="chineseUnitsMIL5">MIL Tech 05 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "chineseUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Defensive Asian Footsoldier">Defensive Asian Footsoldier</option>
+                            <option value="Offensive Asian Footsoldier">Offensive Asian Footsoldier</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="chineseCavMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "chineseCavMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Archer Cavalry">Archer Cavalry</option>
+                            <option value="East Asian Archer Cavalry">East Asian Archer Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="chineseCavMIL6">MIL Tech 06 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "chineseCavMIL6">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Asian Steppe Cavalry">Asian Steppe Cavalry</option>
+                            <option value="Samurai Cavalry">Samurai Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="chineseCavMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "chineseCavMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Green Standard Cavalry">Green Standard Cavalry</option>
+                            <option value="Reformed Asian Cavalry">Reformed Asian Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+            </div>
+
+            <div id = "easternEuropeanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Bardiche Infantry">Bardiche Infantry</option>
+                            <option value="Eastern Medieval Infantry">Eastern Medieval Infantry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanUnitsMIL12">MIL Tech 12 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL12">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Defensive Eastern Musketeers">Defensive Eastern Musketeers</option>
+                            <option value="Offensive Eastern Musketeers">Offensive Eastern Musketeers</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanUnitsMIL15">MIL Tech 15 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL15">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Eastern Tercio">Eastern Tercio</option>
+                            <option value="Soldaty Infantry">Soldaty Infantry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+                
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanCavMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Druzhina Cavalry">Druzhina Cavalry</option>
+                            <option value="Eastern Knights">Eastern Knights</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanCavMIL14">MIL Tech 14 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL14">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Eastern Caracole">Eastern Caracole</option>
+                            <option value="Reformed Eastern Hussars">Reformed Eastern Hussars</option>
+                            <option value="Southern Cossacks">Southern Cossacks</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanCavMIL22">MIL Tech 22 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL22">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Cossack Cavalry">Cossack Cavalry</option>
+                            <option value="Winged Hussars">Winged Hussars</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanCavMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Lancers">Lancers</option>
+                            <option value="Reformed Cossack Cavalry">Reformed Cossack Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="easternEuropeanCavMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "easternEuropeanUnitsMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Advanced Cossack Cavalry">Advanced Cossack Cavalry</option>
+                            <option value="Eastern Cuirassiers">Eastern Cuirassiers</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+            </div>
+
+            <div id = "indianUnits" style = "visibility:hidden; display:none;">
+
+                    <b>Infantry Units</b>
+                    <br><br>
+    
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <label class="input-group-text" for="indianUnitsMIL9">MIL Tech 09 Unit:</label>
+    
+                        </div>
+    
+                        <select class="custom-select" id = "indianUnitsMIL9">
+    
+                            <option selected disabled>Please select a unit.</option>
+    
+                                <option value="Poligar Infantry">Poligar Infantry</option>
+                                <option value="Toofangchis">Toofangchis</option>
+                            
+                            </optgroup>
+                            
+                        </select>
+                    
+                    </div>
+
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <label class="input-group-text" for="indianUnitsMIL12">MIL Tech 12 Unit:</label>
+    
+                        </div>
+    
+                        <select class="custom-select" id = "indianUnitsMIL12">
+    
+                            <option selected disabled>Please select a unit.</option>
+    
+                                <option value="Akbarid Musketeers">Akbarid Musketeers</option>
+                                <option value="South Indian Infantry">South Indian Infantry</option>
+                            
+                            </optgroup>
+                            
+                        </select>
+                    
+                    </div>
+
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <label class="input-group-text" for="indianUnitsMIL18">MIL Tech 18 Unit:</label>
+    
+                        </div>
+    
+                        <select class="custom-select" id = "indianUnitsMIL18">
+    
+                            <option selected disabled>Please select a unit.</option>
+    
+                                <option value="Deccani Musket Infantry">Deccani Musket Infantry</option>
+                                <option value="North Indian Musket Infantry">North Indian Musket Infantry</option>
+                            
+                            </optgroup>
+                            
+                        </select>
+                    
+                    </div>
+
+                    <hr>
+
+                    <b>Cavalry Units</b>
+                    <br><br>
+
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <label class="input-group-text" for="indianCavMIL1">MIL Tech 01 Unit:</label>
+    
+                        </div>
+    
+                        <select class="custom-select" id = "indianCavMIL1">
+    
+                            <option selected disabled>Please select a unit.</option>
+    
+                                <option value="Elephant Archers">Elephant Archers</option>
+                                <option value="Indian Cavalry">Indian Cavalry</option>
+                            
+                            </optgroup>
+                            
+                        </select>
+                    
+                    </div>
+
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <label class="input-group-text" for="indianCavMIL28">MIL Tech 28 Unit:</label>
+    
+                        </div>
+    
+                        <select class="custom-select" id = "indianCavMIL28">
+    
+                            <option selected disabled>Please select a unit.</option>
+    
+                                <option value="Mysorean Light Cavalry">Mysorean Light Cavalry</option>
+                                <option value="Sowars">Sowars</option>
+                            
+                            </optgroup>
+                            
+                        </select>
+                    
+                    </div>
+
+            </div>
+
+            <div id = "muslimUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="muslimUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "muslimUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Muslim Archer">Muslim Archer</option>
+                            <option value="Muslim Footsoldier">Muslim Footsoldier</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="muslimCavMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "muslimCavMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Charge Cavalry">Charge Cavalry</option>
+                            <option value="Muslim Cavalry">Muslim Cavalry</option>
+                            <option value="Muslim Cavalry Archers">Muslim Cavalry Archers</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="muslimCavMIL18">MIL Tech 18 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "muslimCavMIL18">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Afsharid Reformed Cavalry">Afsharid Reformed Cavalry</option>
+                            <option value="Musket Charge Cavalry">Musket Charge Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="muslimCavMIL23">MIL Tech 23 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "muslimCavMIL23">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Ali Bey Reformed Cavalry">Ali Bey Reformed Cavalry</option>
+                            <option value="Muslim Dragoon">Muslim Dragoon</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="muslimCavMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "muslimCavMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Durrani Cavalry">Durrani Cavalry</option>
+                            <option value="Durrani Swivel Cavalry">Durrani Swivel Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+            </div>
+
+            <div id = "mesoamericanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="mesoamericanUnitsMIL5">MIL Tech 05 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "mesoamericanUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="American Forest Warriors">American Forest Warriors</option>
+                            <option value="American Hill Warriors">American Hill Warriors</option>
+                            <option value="American Plains Warriors">American Plains Warriors</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="mesoamericanUnitsMIL10">MIL Tech 10 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "mesoamericanUnitsMIL10">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Reformed American Hill Warriors">Reformed American Hill Warriors</option>
+                            <option value="Reformed American Forest Warriors">Reformed American Forest Warriors</option>
+                            <option value="Reformed American Plains Warriors">Reformed American Plains Warriors</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="mesoamericanUnitsMIL14">MIL Tech 14 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "mesoamericanUnitsMIL14">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="American Hill Musketeers">American Hill Musketeers</option>
+                            <option value="American Forest Musketeers">American Forest Musketeers</option>
+                            <option value="Offensive American Musketeers">Offensive American Musketeers</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="mesoamericanUnitsMIL19">MIL Tech 19 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "mesoamericanUnitsMIL19">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Central American Guerrillas">Central American Guerrillas</option>
+                            <option value="American Guerrilla Warfare">American Guerrilla Warfare</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="mesoamericanUnitsMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "mesoamericanUnitsMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Westernized American Hill Infantry">Westernized American Hill Infantry</option>
+                            <option value="Westernized American Plains Infantry">Westernized American Plains Infantry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">Mesoamerican units have no cavalry options.</div>
+                <hr>
+
+            </div>
+
+            <div id = "northAmericanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Clubmen">Clubmen</option>
+                            <option value="Native American Archer">Native American Archer</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanUnitsMIL5">MIL Tech 05 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Ambush Infantry">Ambush Infantry</option>
+                            <option value="American Plains Warriors">American Plains Warriors</option>
+                            <option value="Algonkin Tomahawk Warriors">Algonkin Tomahawk Warriors</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanUnitsMIL14">MIL Tech 14 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL14">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Native American Arquebusier">Native American Arquebusier</option>
+                            <option value="Creek Arquebusier">Creek Arquebusier</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanCavMIL6">MIL Tech 06 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL6">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="North American Horsemen">North American Horsemen</option>
+                            <option value="Native Indian Horsemen">Native Indian Horsemen</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanCavMIL19">MIL Tech 19 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL19">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="North American Swarm Cavalry">North American Swarm Cavalry</option>
+                            <option value="Commanche Swarm Cavalry">Commanche Swarm Cavalry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="northAmericanCavMIL23">MIL Tech 23 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "northAmericanUnitsMIL23">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="North American Dragoon">North American Dragoon</option>
+                            <option value="Sioux Dragoon">Sioux Dragoon</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>    
+
+            </div>
+
+            <div id = "southAmericanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="southAmericanUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "southAmericanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="South American Spearmen">South American Spearmen</option>
+                            <option value="American Mountain Warriors">American Mountain Warriors</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="southAmericanUnitsMIL5">MIL Tech 05 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "southAmericanUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Reformed Mountain Warriors">Reformed Mountain Warriors</option>
+                            <option value="South American Forest Warriors">South American Forest Warriors</option>
+                            <option value="Incan Slingshots">Incan Slingshots</option>
+                            <option value="Incan Axemen">Incan Axemen</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="southAmericanUnitsMIL10">MIL Tech 10 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "southAmericanUnitsMIL10">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Defensive American Musketeers">Defensive American Musketeers</option>
+                            <option value="South American Arquebusier">South American Arquebusier</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="southAmericanUnitsMIL19">MIL Tech 19 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "southAmericanUnitsMIL19">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Incan Guerrilla">Incan Guerrilla</option>
+                            <option value="South American Guerrilla">South American Guerrilla</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="southAmericanUnitsMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "southAmericanUnitsMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Westernized South American Infantry">Westernized South American Infantry</option>
+                            <option value="Westernized Incan Infantry">Westernized Incan Infantry</option>
+                        
+                        </optgroup>
+                        
+                    </select>
+                
+                </div>
+
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">South American units have no cavalry options.</div>
+                <hr>
+
+            </div>
+
+            <div id = "nomadUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">Nomad units have no infantry options.</div>
+                
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="nomadCavMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "nomadCavMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Eastern Steppe Cavalry">Eastern Steppe Cavalry</option>
+                            <option value="Eastern Swarm Cavalry">Eastern Swarm Cavalry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div id = "westernEuropeanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Halberd Infantry">Halberd Infantry</option>
+                            <option value="Latin Medieval Infantry">Latin Medieval Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL5">MIL Tech 05 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL5">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Galloglaigh Infantry">Galloglaigh Infantry</option>
+                            <option value="Longbow">Longbow</option>
+                            <option value="Men at Arms">Men at Arms</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL9">MIL Tech 09 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL9">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Condotta Infantry">Condotta Infantry</option>
+                            <option value="Landsknechten Infantry">Landsknechten Infantry</option>
+                            <option value="Reformed Galloglaigh Infantry">Reformed Galloglaigh Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL12">MIL Tech 12 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL12">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Free Shooter Infantry">Free Shooter Infantry</option>
+                            <option value="Tercio Infantry">Tercio Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL15">MIL Tech 15 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL15">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Charge Infantry">Charge Infantry</option>
+                            <option value="Maurician Infantry">Maurician Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL19">MIL Tech 19 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL19">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Gustavian Infantry">Gustavian Infantry</option>
+                            <option value="Highlanders Infantry">Highlanders Infantry</option>
+                            <option value="Reformed Tercio">Reformed Tercio</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL23">MIL Tech 23 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL23">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Caroline Infantry">Caroline Infantry</option>
+                            <option value="Grenzer Infantry">Grenzer Infantry</option>
+                            <option value="Line Infantry">Line Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Blue Coat Infantry">Blue Coat Infantry</option>
+                            <option value="Frederickian Infantry">Frederickian Infantry</option>
+                            <option value="Red Coat Infantry">Red Coat Infantry</option>
+                            <option value="White Coat Infantry">White Coat Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Impulse Infantry">Impulse Infantry</option>
+                            <option value="Square Infantry">Square Infantry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanUnitsMIL30">MIL Tech 30 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanUnitsMIL30">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Drill Infantry">Drill Infantry</option>
+                            <option value="Jaeger Infantry">Jaeger Infantry</option>
+                            <option value="Mixed Order Infantry">Mixed Order Infantry</option>
+                            <option value="Napoleonic Square">Napoleonic Square</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+                
+                <hr>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanCavMIL1">MIL Tech 01 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanCavMIL1">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Chevauchée">Chevauchée</option>
+                            <option value="Western Medieval Knights">Western Medieval Knights</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanCavMIL23">MIL Tech 23 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanCavMIL23">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Armee Blanche Cavalry">Armee Blanche Cavalry</option>
+                            <option value="Latin Dragoons">Latin Dragoons</option>
+                            <option value="Latin Hussars">Latin Hussars</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanCavMIL26">MIL Tech 26 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanCavMIL26">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Carabiners">Carabiners</option>
+                            <option value="Reformed Latin Hussars">Reformed Latin Hussars</option>
+                            <option value="Uhlan Cavalry">Uhlan Cavalry</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+
+                        <label class="input-group-text" for="westernEuropeanCavMIL28">MIL Tech 28 Unit:</label>
+
+                    </div>
+
+                    <select class="custom-select" id = "westernEuropeanCavMIL28">
+
+                        <option selected disabled>Please select a unit.</option>
+
+                            <option value="Latin Chasseur">Latin Chasseur</option>
+                            <option value="Latin Cuirassiers">Latin Cuirassiers</option>
+                            <option value="Latin Lancers">Latin Lancers</option>
+                            
+                        </optgroup>
+                            
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div id = "highAmericanUnits" style = "visibility:hidden; display:none;">
+
+                <b>Infantry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">High American units do not have infantry options.</div>
+
+                <b>Cavalry Units</b>
+                <br><br>
+
+                <div class="alert alert-primary" role="alert">High American units do not have cavalry options.</div>
+
+            </div>
+
+            <!--Fifth step title-->
+            <p><b>(5) DEFINE MONARCH NAMES</b></p>
+
+            <!--Fifth step description-->
+            <p>This defines what first-names your monarchs may have. Below you can find information for each option.</p> 
+
+            <!--Monarch name must only be letters-->
+            <!--Monarch rengal must only be numbers-->
+            <!--Monarch chance must be between 0 and 100-->
+
+            <div class="card-columns">
+
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <input type="text" id = "monarchName" class="form-control" aria-label="Default" placeholder = "Name" aria-describedby="inputGroup-sizing-default">
+
+                        <hr>
+
+                        <form>
+                            <div class="form-row">
+                                <div class="col-4">
+                                    <input type="text" class="form-control" placeholder="Regnal #">
+                                </div>
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option value="monarchSexMale">Male</option>
+                                            <option value="monarchSexFemale">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option value="monarchSexMale">High</option>
+                                            <option value="monarchSexFemale">Med.</option>
+                                            <option value="monarchNameLow">Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <hr>
+                        <div align="right">
+                            <button type="button" class="btn btn-primary btn-sm">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="height: 14.3rem;" id ="cardCreator">
+                    <div class="card-body" style="padding: 80px;">
+                        <div align="center">
+                            <button type="button" class="btn btn-primary btn-sm">Create new card.</button>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <!--
+        <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a> 
+        <a href="#" data-toggle="tooltip" title="Meep!">Hover over me</a> 
+        -->
+
+    </body>
+
+</html>
+
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+ <link href="/static/favicon.ico" rel="icon">
+
+ <link href="/static/styles.css" rel="stylesheet">
+
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+ <script>
+
+     // Select all elements with data-toggle="tooltips" in the document
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Select a specified element
+    $('#myTooltip').tooltip();
+
+    //Creates a boolean that checks if the tag is valid.
+    tagValid = false;
+
+    //Creates a boolean that checks if the name is valid.
+    nameValid = false;
+
+    //Defines all tags in the game.
+    countryTags = ["REB","PIR","NAT","SWE","DAN","FIN","GOT","NOR","SHL","SCA","EST","LVA","SMI","KRL","ICE","ACH","ALB","ATH","BOS","BUL","BYZ","CEP","CRO","CRT","CYP","EPI","GRE","KNI","MOE","MOL","MON","NAX","RAG","RMN","SER","TRA","WAL","HUN","SLO","TUR","CNN","CRN","ENG","LEI","IRE","MNS","SCO","TYR","WLS","NOL","GBR","MTH","ULS","DMS","SLN","KID","HSC","ORD","TRY","FLY","MCM","KOI","LOI","BRZ","CAN","CHL","COL","HAT","LAP","LOU","MEX","PEU","PRG","QUE","CAM","USA","VNZ","AUS","CAL","TEX","DNZ","KRA","LIT","LIV","MAZ","POL","PRU","KUR","RIG","TEU","PLC","VOL","KIE","CHR","OKA","ALE","ALS","AMG","AUV","AVI","BOU","BRI","BUR","CHP","COR","DAU","FOI","FRA","GUY","NEV","NRM","ORL","PIC","PRO","SPI","TOU","BER","AAC","ANH","ANS","AUG","BAD","BAV","BOH","BRA","BRE","BRU","EFR","FRN","GER","HAB","HAM","HAN","HES","HLR","KLE","KOL","LAU","LOR","LUN","MAG","MAI","MEI","MKL","MUN","MVA","OLD","PAL","POM","SAX","SIL","SLZ","STY","SWI","THU","TIR","TRI","ULM","WBG","WES","WUR","NUM","MEM","VER","NSA","RVA","DTT","ARA","CAS","CAT","GRA","NAV","POR","SPA","GAL","LON","ADU","VAL","ASU","MJO","AQU","ETR","FER","GEN","ITA","MAN","MLO","MOD","NAP","PAP","PAR","PIS","SAR","SAV","SIC","SIE","TUS","URB","VEN","MFA","LUC","LAN","JAI","BRB","FLA","FRI","GEL","HAI","HOL","LIE","LUX","NED","UTR","ARM","AST","CRI","GEO","KAZ","MOS","NOV","PSK","QAS","RUS","RYA","TVE","UKR","YAR","ZAZ","NOG","SIB","PLT","PRM","FEO","BSH","BLO","RSO","GOL","GLH","ADE","ALH","ANZ","ARB","ARD","BHT","DAW","ERE","FAD","GRM","HDR","HED","LEB","MAK","MDA","MFL","MHR","NAJ","NJR","OMA","RAS","SHM","SHR","SRV","YAS","YEM","HSN","BTL","AKK","AYD","CND","DUL","IRQ","KAR","SYR","TRE","SRU","MEN","RAM","AVR","MLK","SME","ARL","MSY","RUM","ALG","FEZ","MAM","MOR","TRP","TUN","EGY","KBA","TFL","SOS","TLC","TGT","GHD","FZA","MZB","SLE","TET","MRK","KZH","KHI","SHY","KOK","BUK","AFG","KHO","PER","QAR","TIM","TRS","KRY","CIR","GAZ","IME","TAB","ORM","LRI","SIS","BPI","FRS","KRM","YZD","ISF","TBR","BSR","MGR","QOM","AZT","CHE","CHM","CRE","HUR","INC","IRO","MAY","SHA","ZAP","ASH","BEN","ETH","KON","MAL","NUB","SON","ZAN","ZIM","ADA","HAU","KBO","LOA","OYO","SOF","SOK","JOL","SFA","MBA","MLI","AJU","MDI","ENA","AFA","ALO","DAR","GLE","HAR","HOB","KAF","MED","MJE","MRE","PTE","WAR","BTI","BEJ","JIM","WLY","DAM","HDY","SOA","JJI","ABB","TYO","SYO","KSJ","LUB","LND","CKW","KIK","KZB","YAK","KLD","KUB","RWA","BUU","BUG","NKO","KRW","BNY","BSG","UBH","MRA","LDU","TBK","MKU","RZW","MIR","SKA","BTS","MFY","ANT","ANN","ARK","ATJ","AYU","BLI","BAN","BEI","CHA","CHG","CHK","DAI","JAP","AMA","ASA","CSK","DTE","HJO","HSK","HTK","IKE","IMG","MAE","MRI","ODA","OTM","OUC","SBA","SMZ","TKD","TKG","UES","YMN","RFR","ASK","KTB","ANU","AKM","AKT","CBA","ISK","ITO","KKC","KNO","OGS","SHN","STK","TKI","UTN","TTI","KHA","KHM","KOR","LNA","LUA","LXA","MAJ","MCH","MKS","MLC","MNG","MTR","OIR","PAT","PEG","QNG","RYU","SST","SUK","SUL","TAU","TIB","TOK","VIE","CZH","CSH","CXI","YUA","FRM","ILK","KLM","MGE","SOO","NVK","SOL","EJZ","NHX","MYR","MHX","MJZ","KRC","KLK","HMI","ZUN","KAS","CHH","KSD","SYG","UTS","KAM","GUG","PHA","CDL","CYI","CMI","MIN","YUE","SHU","NNG","CHC","TNG","WUU","QIC","YAN","JIN","LNG","QIN","HUA","CGS","BAL","BNG","BIJ","BAH","DLH","GOC","DEC","MAR","MUG","MYS","VIJ","AHM","ASS","GUJ","JNP","MAD","MLW","MAW","MER","MUL","NAG","NPL","ORI","PUN","SND","BRR","JAN","KRK","GDW","GRJ","GWA","DHU","KSH","KLN","KHD","ODH","VND","MAB","MEW","BDA","BST","BHU","BND","CEY","JSL","KAC","KMT","KGR","KAT","KOC","MLB","HAD","NGA","RMP","LDK","BGL","JFN","PTA","GHR","CHD","NGP","JAJ","TRT","CMP","BGA","TPR","SDY","BHA","YOR","DGL","MBL","SKK","IDR","JLV","PTL","NVR","RJK","JGD","PRB","PAN","KLP","SBP","PTT","RTT","KLH","KJH","PRD","JPR","SRG","KND","TLG","KLT","DNG","DTI","GRK","JML","LWA","MKP","SRM","KTU","KMN","GNG","TNJ","SRH","RJP","BAR","HSA","SMO","NZH","KOJ","MSA","HIN","ABE","APA","ASI","BLA","CAD","CHI","CHO","CHY","COM","FOX","ILL","LEN","MAH","MIK","MMI","NAH","OJI","OSA","OTT","PAW","PEQ","PIM","POT","POW","PUE","SHO","SIO","SUS","WCR","AIR","BON","DAH","DGB","FUL","JNN","KAN","KBU","KNG","KTS","MSI","NUP","TMB","YAO","YAT","ZAF","ZZZ","NDO","AVA","HSE","JOH","KED","LIG","MPH","MYA","PRK","MMA","MKA","MPA","MNI","KAL","HSI","BPR","CHU","HOD","CHV","KMC","BRT","ARP","CLM","CNK","COC","HDA","ITZ","KIC","KIO","MIX","SAL","TAR","TLA","TLX","TOT","WIC","XIU","BLM","BTN","CRB","DMK","PGR","PLB","PSA","SAK","SUN","KUT","BNJ","LFA","LNO","LUW","MGD","TER","TID","MAS","PGS","TDO","MNA","CEB","BTU","CSU","CCQ","MPC","MCA","QTO","CJA","HJA","PTG","TPQ","TPA","TUA","GUA","CUA","WKA","CYA","CLA","CRA","PCJ","ARW","CAB","ICM","MAT","COI","TEO","XAL","GAM","HST","CCM","OTO","YOK","LAC","KAQ","CTM","KER","ZNI","MSC","LIP","CHT","MIS","TAI","CNP","TON","YAQ","YKT","NSS","PRY","TOR","LIB","JMN","ROM","SYN"];
+    
+    //Defines all country names in the game.
+    countryNames = ["Rebels","Pirates","Natives","Sweden","Denmark","Finland","Gotland","Norway","Holstein","Scandinavia","Estonia","Livonia","Sami","Karelia","Iceland","Achaea","Albania","Athens","Bosnia","Bulgaria","Byzantine Empire","Corfu","Croatia","Crete","Cyprus","Epirus","Greece","Knights","Morea","Moldavia","Montenegro","Naxos","Ragusa","Romania","Serbia","Transylvania","Wallachia","Hungary","Slovakia","Ottomans","Connacht","Cornwall","England","Leinster","Ireland","Munster","Scotland","Tyrone","Wales","Northumberland","Great Britain","Meath","Ulster","Desmond","Sligo","Kildare","Highlands","Ormond","Tyrconnell","Faly","MacCarthy","Mann","The Isles","Brazil","Canada","Chile","Colombia","Haiti","La Plata","Louisiana","Mexico","Peru","Paraguay","Quebec","United Central America","USA","Venezuela","Australia","California","Texas","Danzig","Krakow","Lithuania","Livonian Order","Mazovia","Poland","Prussia","Kurland","Riga","Teutonic Order","The Commonwealth","Volyn","Kiev","Chernigov","Oka","Alencon","Alsace","Armagnac","Auvergne","Avignon","Bourbonnais","Brittany","Burgundy","Champagne","Corsica","Dauphine","Foix","France","Gascony","Nevers","Normandy","Orleans","Picardy","Provence","Sardinia Piedmont","Toulouse","Berry","Aachen","Anhalt","Ansbach","Augsburg","Baden","Bavaria","Bohemia","Brandenburg","Bremen","Brunswick","East Frisia","Frankfurt","Germany","Austria","Hamburg","Hannover","Hessen","Holy Roman Empire","Kleves","Cologne","Lauenburg","Lorraine","Luneburg","Magdeburg","Mainz","Meissen","Mecklenburg","Munster","Moravia","Oldenburg","The Palatinate","Pommerania","Saxony","Silesia","Salzburg","Styria","Schweiz","Thuringia","Tirol","Trier","Ulm","Wurzburg","Westfalia","Wurttemberg","Nuremberg","Memmingen","Verden","Nassau","Ravensburg","Dithmarschen","Aragon","Castille","Catalunya","Granada","Navarra","Portugal","Spain","Galicia","Leon","Andalusia","Valencia","Asturias","Majorca","Aquileia","Etruria","Ferrara","Genoa","Italy","Mantua","Milan","Modena","Naples","Papal","Parma","Pisa","Sardinia","Savoy","Sicily","Siena","Tuscany","Urbino","Venice","Montferrat","Lucca","Florence","Malta","Brabant","Flanders","Friesland","Gelre","Hainaut","Holland","Liege","Luxembourg","Netherlands","Utrecht","Armenia","Astrakhan","Crimea","Georgia","Kazan","Muscowy","Novgorod","Pskov","Qasim","Russia","Ryazan","Tver","Ukraine","Yaroslavl","Zaporozhie","Nogai","Sibir","Polotsk","Perm","Theodoro","Bashkiria","Beloozero","Rostov","Great Horde","Golden Horde","Aden","Haasa","Anizah","Arabia","Ardalan","Bohtan","Dawasir","Eretna","Fadl","Germiyan","Hadramut","Hedjaz","Lebanon","Makuria","Medina","Mikhlaf","Mahra","Najd","Najran","Oman","Rassids","Shammar","Sharjah","Shirvanshah","Yas","Yemen","Ayyubids","Bitlis","Aq Qoyunlu","Aydin","Candar","Dulkadir","Iraq","Karaman","Syria","Trebizond","Saruhan","Mentese","Ramazan","Avars","Kashen","Samtskhe","Ardabil","Mushashaiyyah","Rum","Algiers","Fez","Burgi","Morocco","Tripoli","Tunisia","Egypt","Kabylia","Tafilalt","Sus","Tlemcen","Touggourt","Ghadames","Fezzan","Mzab","Sale","Tetouan","Marrakesh","Kazakh","Khiva","Shaybanid","Kokkand","Bukhara","Afghanistan","Khorasan","Persia","Qara Qoyunlu","Timurid","Transoxiana","Gilan","Circassia","Gazikumukh","Imereti","Tabarestan","Ormuz","Luristan","Sistan","Biapas","Fars","Kerman","Yazd","Isfahan","Tabriz","Basra","Maregh","Qom","Aztec","Cherokee","Chimu","Creek","Huron","Inca","Iroquois","Maya","Shawnee","Zapotec","Ashanti","Benin","Ethiopia","Kongo","Mali","Funj","Songhai","Swahili","Mutapa","Adal","Hausa","Kanem Bornu","Loango","Oyo","Sofala","Sokoto","Jolof","SofalaSwa","Mombasa","Malindi","Ajuuraan","Mogadishu","Eneara","Afar","Alodia","Darfur","Geledi","Harar","Hobyo","Kaffa","Medri","Majeerteen","Marehan","Pate","Warsangali","Semien","Beja","Jima","Welayta","Damot","Hadiya","Shewa","Janjero","Dongola","Tyo","Soyo","Kasanje","Luba","Lunda","Chokwe","Kikondja","Kazembe","Yaka","Kalundwe","Kuba","Rwanda","Burundi","Buganda","Nkore","Karagwe","Bunyoro","Basoga","Buha","Maravi","Lundu","Tumbuka","Makua","Butua","Merina","Sakalava","Betsimisaraka","Mahafaly","Antemoro","Annam","Arakan","Atjeh","Ayutthaya","Bali","Banten","Brunei","Champa","Chagatai","Champassak","DaiViet","Japan","Amago","Asakura","Chosokabe","Date","Hojo","Hosokawa","Hatakeyama","Ikeda","Imagawa","Maeda","Mori","Oda","Otomo","Ouchi","Shiba","Shimazu","Takeda","Tokugawa","Uesugi","Yamana","Nanbu","Ashikaga","Kitabatake","Ainu","Akamatsu","Ando","Chiba","Isshiki","Ito","Kikuchi","Kono","Ogasawara","Shoni","Satake","Toki","Utsunomiya","Tsutsui","Mongolia","Khmer","Korea","Lan Na","Luang Prabang","Lan Xang","Majapahit","Manchu","Makassar","Malacca","Ming","Mataram","Oirat","Pattani","Pegu","Qing","Ryukyu","Shan","Sukhothai","Sulu","Taungu","Tibet","Tonkin","Vientiane","Zhou","Shun","Xi","Great Yuan","Formosa","Ilkhanate","Kalmyk","Mongol Empire","So","Nivkh","Solon","East Jianzhou","North Haixi","Yeren","Haixi","Jianzhou","Khorchin","Khalkha","Karadel","Zunghar","Yarkand","Chahar","Khoshuud","Sarigyogir","Utsang","Mdokhams","Guge","Phagmodrupa","Dali","Yi","Miao","Min","Yue","Shu","Ning","Chu","Tang","Wu","Qi","Yan","Jin","Liang","Qin","Huai","Changsheng","Baluchistan","Bengal","Bijapur","Bahmanis","Delhi","Golconda","Deccan","Marathas","Mughal","Mysore","Vijaynagara","Ahmadnagar","Assam","Gujarat","Jaunpur","Madurai","Malwa","Marwar","Mewar","Multan","Nagpur","Nepal","Orissa","Punjab","Sind","Berar","Jangladesh","Carnatic","Gondwana","Garjat","Gwalior","Dhundhar","Kashmir","Keladi","Khandesh","Oudh","Venad","Malabar","Mewat","Baroda","Bastar","Bhutan","Bundelkhand","Ceylon","Jaisalmer","Kachar","Koch","Kangra","Kathiawar","Kochin","Manipur","Hadoti","Nagaur","Rohilkandh","Ladakh","Bagelkhand","Jaffna","Patiala","Garhwal","Chanda","Jharkhand","Janjira","Tirhut","RewaKantha","Baglana","Tripura","Sadiya","Bharat","Andhra","Maldives","Bishnupur","Sikkim","Idar","Jhalavad","Palitana","Navanagar","Rajkot","Junagarh","Porbandar","Panna","Kalpi","Sambalpur","Patna","Ratanpur","Kalahandi","Keonhjar","Parlakhimidi","Jeypore","Surguja","Kandy","Telingana","Kolathunad","Dang","Doti","Gorkha","Jumla","Limbuwan","Makwanpur","Sirmur","Kathmandu","Kumaon","Gingee","Tanjore","Sirhind","Rajputana","Bar","Hansa","Smolensk","Nizhny Novgorod","Jerusalem","Malaya","Hindustan","Abenaki","Apache","Assiniboine","Blackfoot","Caddo","Chickasaw","Choctaw","Cheyenne","Comanche","Fox","Illinewek","Lenape","Mahican","Mikmaq","Miami","Navajo","Ojibwa","Osage","Ottawa","Pawnee","Pequot","Pima","Potawatomi","Powhatan","Pueblo","Shoshone","Sioux","Susquehannock","Cree","Air","Bonoman","Dahomey","Dagbon","Fulo","Jenne","Kano","Kaabu","Kong","Katsina","Mossi","Nupe","Timbuktu","Yao","Yatenga","Zafunu","Zazzau","Ndongo","Ava","Hsenwi","Johor","Kedah","Ligor","Muan Phuang","Mong Yang","Perak","Mong Mao","Mong Kawng","Mong Pai","Mong Nai","Kale","Hsipaw","Prome","Chukchi","Hodyntsy","Chavchuveny","Kamchadals","Buryats","Arapaho","Colima","Chinook","Cocomes","Haida","Itza","Kiche","Kiowa","Mixtec","Salish","Tarascan","Tlapanec","Tlaxcala","Totonac","Wichita","Xiu","Blambangan","Buton","Cirebon","Demak","Pagarruyung","Palembang","Pasai","Siak","Sunda","Kutai","Banjar","Lanfang","Lanao","Luwu","Maguindanao","Ternate","Tidore","Madyaas","Pangasinan","Tondo","Maynila","Cebu","Butuan","Cusco","Calchaqui","Mapuche","Muisca","Quito","Cajamarca","Huyla","Potiguara","Tupiniquim","Tupinamba","Tapuia","Guarani","Charrua","Wanka","Chachapoya","Colla","Charca","Pacajes","Arawak","Carib","Ichma","Matlatzinca","Coixtlahuaca","Teotitlan","Xalisco","Guamar","Huastec","Chichimeca","Otomi","Yokotan","Lacandon","Kaqchikel","Chactemal","Keres","Zuni","Mescalero","Lipan","Chorti","Miskito","Tairona","Can","Tonallan","Yaqui","Yokuts","New Providence","Port Royal","Tortuga","Libertatia","Jan Mayan","Roman Empire","Synthetics"];
+
+    function checkAvailabilityTag () {
+
+        //Sets the user input as a variable.
+        enteredTag = document.getElementById("tagUtility").value;
+
+        //Gets the alert container.
+        alertContainer = document.getElementById("alertContainerTag");
+
+        //Clears the alert container.
+        alertContainer.innerHTML = "";
+
+        //Makes the alert container visible if there is a enteredTag.
+        alertContainer.style.visibility = "visible";
+
+        //Makes the alert container take up space.
+        alertContainer.style.display = "block";
+
+        //If the user's desired tag is taken, display an error message. Else, display a success message.
+        if (countryTags.indexOf(enteredTag) > -1) {
+
+            //Changes alertContainer to be a danger alert.
+            alertContainer.className = "alert alert-danger";
+
+            //Adds an error message to alertContainer.
+            alertContainer.insertAdjacentHTML('beforeend', "Sorry! This tag is already taken.");
+
+            //Confirms that the tag is not valid.
+            tagValid = false;
+        
+        //If the entered tag is blank, return an error.
+        } else if (enteredTag == "") {
+
+            //Changes alertContainer to be a danger alert.
+            alertContainer.className = "alert alert-danger";
+
+            //Adds an error message to alertContainer.
+            alertContainer.insertAdjacentHTML('beforeend', "You must enter a tag.");
+
+            //Confirms that the tag is not valid.
+            tagValid = false;
+
+        //If the entered tag is not three letters long, return an error.
+        } else if (enteredTag.length != 3) {
+
+            //Changes alertContainer to be a danger alert.
+            alertContainer.className = "alert alert-danger";
+
+            //Adds an error message to alertContainer.
+            alertContainer.insertAdjacentHTML('beforeend', "Tags must be three letters long.");
+
+            //Confirms that the tag is not valid.
+            tagValid = false;
+
+        //If the entered tag is correct and unique, return success.
+        } else {
+            
+            //Changes alertContainer to be a success alert.
+            alertContainer.className = "alert alert-success";
+
+            //Adds a success message to alertContainer
+            alertContainer.insertAdjacentHTML('beforeend', "This tag is unique! Please proceed to the next step.");
+
+            //Confirms that the tag is valid.
+            tagValid = true;
+
+        }
+
+    }
+
+    function checkAvailabilityName () {
+
+        //Sets the user input as a variable.
+        enteredName = document.getElementById("nameUtility").value;
+
+        //Gets the alert container.
+        alertContainer = document.getElementById("alertContainerName");
+
+        //Clears the alert container.
+        alertContainer.innerHTML = "";
+
+        //Makes the alert container visible if there is a enteredTag.
+        alertContainer.style.visibility = "visible";
+
+        //Makes the alert container take up space.
+        alertContainer.style.display = "block";
+
+        if (countryNames.indexOf(enteredName) > -1) {
+
+            //Changes alertContainer to be a danger alert.
+            alertContainer.className = "alert alert-danger";
+
+            //Adds an error message to alertContainer.
+            alertContainer.insertAdjacentHTML('beforeend', "Sorry! This name is already taken.");
+
+            //Confirms that the name is not valid.
+            nameValid = false;
+
+        //If the entered tag is blank, return an error.
+        } else if (enteredName == "") {
+
+            //Changes alertContainer to be a danger alert.
+            alertContainer.className = "alert alert-danger";
+
+            //Adds an error message to alertContainer.
+            alertContainer.insertAdjacentHTML('beforeend', "You must enter a name.");
+
+            //Confirms that the name is not valid.
+            nameValid = false;
+
+        } else {
+            
+            //Changes alertContainer to be a success alert.
+            alertContainer.className = "alert alert-success";
+
+            //Adds a success message to alertContainer
+            alertContainer.insertAdjacentHTML('beforeend', "This name is unique! Please proceed to the next step.");
+
+            //Confirms that the name is valid.
+            nameValid = true;
+
+        }
+
+        checkGenerateFile1();
+
+    }
+
+    function checkGenerateFile1 () {
+
+        //If both the tag and the name are valid.
+        if (tagValid == true && nameValid == true) {
+
+            //Gets the file1 element.
+            file1 = document.getElementById("file1");
+
+            //Gets the fileName element.
+            file1Name = document.getElementById("file1Name");
+
+            //Gets the value of the tag.
+            tag = document.getElementById("tagUtility").value;
+
+            //Gets the value of the name.
+            name = document.getElementById("nameUtility").value;
+
+            //Updates the file name indicator.
+            file1Name.innerHTML = "<b>FILE NAME: "+tag.toUpperCase()+".txt</b>";
+
+            //Determines the contents of the text area.
+            file1.value = tag+' = "countries/'+name+'.txt"';
+
+            //Determines the name of the file.
+            file1Name = tag.toUpperCase()+".txt";
+
+            //Determines the contents of the file.
+            file1Content = tag+' = "countries/'+name+'.txt"';
+
+            //Creates the file.
+            myFile = new Blob([file1Content], {type: 'text/plain'});
+
+            //Accessing Windows properties.
+            window.URL = window.URL || window.webkitURL;
+
+            //Creating the download link.
+            document.getElementById('download').setAttribute('href', window.URL.createObjectURL(myFile));
+
+            //Adding the download attribute and linking it to file1.
+            document.getElementById('download').setAttribute('download', file1Name);
+
+        }
+
+    }
+
+    function fileCopy (textToCopy) {
+        
+        //Gets the file1 element.
+        var copyText = document.getElementById(textToCopy);
+
+        //Select the file1 element and selects its contents.
+        copyText.select();
+
+        //Setting selection range.
+        copyText.setSelectionRange(0, 99999);
+
+        //With the file1 element selected, copies its contents.
+        document.execCommand("copy");
+
+    }
+
+    function fileInfo (fileToInfo) {
+
+        if (fileToInfo == 'file1') {
+
+            //Gets the alert container.
+            alertContainerFile1 = document.getElementById("alertContainerFile1");
+
+            //Clears the alert container
+            alertContainerFile1.innerHTML = "C: > Program Files (x86) > Steam > steamapps > common > Europa Universalis IV > common > country_tags";
+
+            //Makes the alert container visible if there is a enteredTag.
+            alertContainerFile1.style.visibility = "visible";
+
+            //Makes the alert container take up space.
+            alertContainerFile1.style.display = "block";
+
+        }
+
+    }
+
+    function updateColor (color) {
+
+        resultPreview = document.getElementById("resultPreview");
+
+        redInput = document.getElementById("redInput");
+
+        greenInput = document.getElementById("greenInput");
+
+        blueInput = document.getElementById("blueInput");
+
+        if (color == 'red') {
+
+            redPreview = document.getElementById("redPreview");
+
+            redPreview.style.borderColor = "rgb("+redInput.value+", 0, 0)";
+
+        }
+
+        if (color == 'green') {
+
+            greenPreview = document.getElementById("greenPreview");
+
+            greenPreview.style.borderColor = "rgb(0,"+greenInput.value+", 0)";
+
+        }
+
+        if (color == 'blue') {
+
+            bluePreview = document.getElementById("bluePreview");
+
+            bluePreview.style.borderColor = "rgb(0, 0,"+blueInput.value+")";
+
+        }
+
+        resultPreview.style.borderColor = "rgb("+redInput.value+","+greenInput.value+","+blueInput.value+")";
+
+    }
+
+    function getUnitGroupUtility () {
+
+        historicalUnitGroupSelect = document.getElementById("historicalUnitGroupSelect");
+
+        if (historicalUnitGroupSelect.value == "anatolianGroup") {
+
+            anatolianUnitSelect = document.getElementById("anatolianUnits");
+            anatolianUnitSelect.style.visibility = "visible";
+            anatolianUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "africanGroup") {
+
+            africanUnitSelect = document.getElementById("africanUnits");
+            africanUnitSelect.style.visibility = "visible";
+            africanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "chineseGroup") {
+
+            chineseUnitSelect = document.getElementById("chineseUnits");
+            chineseUnitSelect.style.visibility = "visible";
+            chineseUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "easternEuropeanGroup") {
+
+            easternEuropeanUnitSelect = document.getElementById("easternUnits");
+            easternEuropeanUnitSelect.style.visibility = "visible";
+            easternEuropeanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "indianGroup") {
+
+            indianUnitSelect = document.getElementById("indianUnits");
+            indianUnitSelect.style.visibility = "visible";
+            indianUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "muslimGroup") {
+
+            muslimUnitSelect = document.getElementById("muslimUnits");
+            muslimUnitSelect.style.visibility = "visible";
+            muslimUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "mesoamericanGroup") {
+
+            mesoamericanUnitSelect = document.getElementById("mesoamericanUnits");
+            mesoamericanUnitSelect.style.visibility = "visible";
+            mesoamericanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "nomadGroup") {
+
+            nomadUnitSelect = document.getElementById("nomadUnits");
+            nomadUnitSelect.style.visibility = "visible";
+            nomadUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "northAmericanGroup") {
+
+            northAmericanUnitSelect = document.getElementById("northAmericanUnits");
+            northAmericanUnitSelect.style.visibility = "visible";
+            northAmericanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "southAmericanGroup") {
+
+            southAmericanUnitSelect = document.getElementById("southAmericanUnits");
+            southAmericanUnitSelect.style.visibility = "visible";
+            southAmericanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "westernGroup") {
+
+            westernEuropeanUnitSelect = document.getElementById("westernEuropeanUnits");
+            westernEuropeanUnitSelect.style.visibility = "visible";
+            westernEuropeanUnitSelect.style.display = "block";
+
+        }
+
+        if (historicalUnitGroupSelect.value == "highAmericanGroup") {
+
+            highAmericanUnitSelect = document.getElementById("highAmericanUnits");
+            highAmericanUnitSelect.style.visibility = "visible";
+            highAmericanUnitSelect.style.display = "block";
+
+        }
+
+    }
+
+    function updateCard (change) {
+
+        if (change == "toNamePlain") {
+
+            monarchName = document.getElementById("monarchName").value;
+
+            if (monarchName == "") {
+
+            } else {
+
+                monarchNameInput = document.getElementById("monarchNameInput");
+
+                monarchNamePlain = document.getElementById("monarchNamePlain");
+
+                monarchNamePlain.innerHTML = monarchName;
+                monarchNamePlain.style.visibility = "visible";
+                monarchNamePlain.style.display = "block";
+
+                monarchNameInput.style.visibility = "hidden";
+                monarchNameInput.style.display = "none";
+
+            }
+
+        }
+
+        if (change == "toNameInput") {
+
+            monarchName = document.getElementById("monarchName").value;
+
+            monarchNameInput = document.getElementById("monarchNameInput");
+
+            monarchNamePlain = document.getElementById("monarchNamePlain");
+
+            monarchNameInput.style.visibility = "visible";
+            monarchNameInput.style.display = "flex";
+
+            monarchNamePlain.style.visibility = "hidden";
+            monarchNamePlain.style.display = "none";
+
+        }
+
+        if (change == "toRegnalPlain") {
+
+            monarchRegnal = document.getElementById("monarchRegnal").value;
+
+            if (monarchRegnal == "") {
+
+            } else {
+
+                monarchRegnalInput = document.getElementById("monarchRegnal");
+
+                monarchRegnalPlain = document.getElementById("monarchRegnalPlain");
+
+                monarchRegnalPlain.innerHTML = monarchRegnal;
+                monarchRegnalPlain.style.visibility = "visible";
+                monarchRegnalPlain.style.display = "block";
+
+                monarchRegnalInput.style.visibility = "hidden";
+                monarchRegnalInput.style.display = "none";
+
+            }
+
+        }
+
+        if (change == "toRegnalInput") {
+
+            monarchRegnal = document.getElementById("monarchRegnal").value;
+
+            monarchRegnalInput = document.getElementById("monarchRegnal");
+
+            monarchRegnalPlain = document.getElementById("monarchRegnalPlain");
+
+            monarchRegnalInput.style.visibility = "visible";
+            monarchRegnalInput.style.display = "flex";
+
+            monarchRegnalPlain.style.visibility = "hidden";
+            monarchRegnalPlain.style.display = "none";
+
+        }
+
+    }
+
+ </script>
