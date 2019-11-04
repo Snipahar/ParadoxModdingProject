@@ -2303,44 +2303,24 @@
             <p><b>(6) DEFINE LEADER NAMES</b></p>
 
             <!--Sixth step description-->
-            <p>This defines what names will be used for generals, admirals, and explorers. In the utility below, you can add leader names to the list. You can add new leader names by clicking "Add Leader."</p> 
-            <hr>
+
+            <!--
+            <span>This defines what names will be used for generals, admirals, and explorers. In the utility below, you can add leader names to the list. You can add new leader names by clicking: <span onclick="addCard('leaderCard')"><u><b><font size="3" color="blue"><a>ADD LEADER</a></font></b></u></span>.</span>
+            -->
+            <span>This defines what names will be used for generals, admirals, and explorers. In the utility below, you can add leader names to the list. You can add new leader names by clicking <span><button type="button" class="btn btn-primary btn-sm" onclick="addCard('leaderCard')">Add Leader</button></span></span>
+
+            <br><br>
 
             <!--Sixth step utility-->
-            <ul class="list-group">
+            <div id = "leader0">
 
-                <li class="list-group-item active">LEADER NAMES</li>
-
-                <div id = "leader0">
-                
-                    <li class="list-group-item" id = "leaderCard0">
-                        
-                        <form>
-
-                            <div class="form-row">
-
-                                <div class="col">
-                                    <input type="text" class="form-control" id = "leaderName0">
-                                </div>
-
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-primary" onclick="deleteLeaderCard('leaderCard0')">Delete</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </li>
-
+                <div class="input-group mb-3" id = leaderCard0>
+                    <input type="text" class="form-control" id = "leaderName0" placeholder="Leader name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="deleteElement('leaderCard0')">Delete</button>
+                    </div>
                 </div>
 
-            </ul>
-
-            <br>
-
-            <div align="right">
-                <button type="button" class="btn btn-primary" onclick="addLeader()">Add Leader</button>
             </div>
 
             <hr>
@@ -2349,44 +2329,20 @@
             <p><b>(7) DEFINE SHIP NAMES</b></p>
 
             <!--Seventh step description-->
-            <p>This defines what names will be used for ships. In the utility below, you can add ship names to the list. You can add new ship names by clicking "Add Ship."</p> 
-            <hr>
+            <span>This defines what names will be used for ships. In the utility below, you can add ship names to the list. You can add new ship names by clicking <span><button type="button" class="btn btn-primary btn-sm" onclick="addCard('shipCard')">Add Ship</button></span></span>
+
+            <br><br>
 
             <!--Seventh step utility-->
-            <ul class="list-group">
+            <div id = "ship0">
 
-                <li class="list-group-item active">SHIP NAMES</li>
-
-                <div id = "ship0">
-                
-                    <li class="list-group-item" id = "shipCard0">
-                        
-                        <form>
-
-                            <div class="form-row">
-
-                                <div class="col">
-                                    <input type="text" class="form-control" id = "shipName0">
-                                </div>
-
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-primary" onclick="deleteLeaderCard('shipCard0')">Delete</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </li>
-
+                <div class="input-group mb-3" id = shipCard0>
+                    <input type="text" class="form-control" id = "shipName0" placeholder="Ship name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="deleteElement('shipCard0')">Delete</button>
+                    </div>
                 </div>
 
-            </ul>
-
-            <br>
-
-            <div align="right">
-                <button type="button" class="btn btn-primary" onclick="addShip()">Add Ship</button>
             </div>
 
             <hr>
@@ -2395,90 +2351,41 @@
             <p><b>(8) DEFINE ARMY NAMES</b></p>
 
             <!--Eighth step description-->
-            <p>This defines what names will be used for armies. In the utility below, you can add army names to the list. You can add new army names by clicking "Add Army."</p> 
-            <hr>
-
-            <!--Eighth step utility-->
-            <ul class="list-group">
-
-                <li class="list-group-item active">ARMY NAMES</li>
-
-                <div id = "army0">
-                
-                    <li class="list-group-item" id = "armyCard0">
-                        
-                        <form>
-
-                            <div class="form-row">
-
-                                <div class="col">
-                                    <input type="text" class="form-control" id = "armyName0">
-                                </div>
-
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-primary" onclick="deleteElement('armyCard0')">Delete</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </li>
-
-                </div>
-
-            </ul>
+            <p>This defines what names will be used for armies. In the utility below, you can add army names to the list. You can add new army names by clicking <span><button type="button" class="btn btn-primary btn-sm" onclick="addCard('armyCard')">Add Army</button></span></p> 
 
             <br>
 
-            <div align="right">
-                <button type="button" class="btn btn-primary" onclick="addCard('armyCard')">Add Army</button>
+            <!--Eighth step utility-->
+            <div id = "army0">
+
+                <div class="input-group mb-3" id = armyCard0>
+                    <input type="text" class="form-control" id = "armyName0" placeholder="Army name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="deleteElement('armyCard0')">Delete</button>
+                    </div>
+                </div>
+
             </div>
 
             <hr>
 
             <!--Ninth step title-->
             <p><b>(9) DEFINE FLEET NAMES</b></p>
-
-            <!--Ninth step description-->
-            <p>This defines what names will be used for fleets. In the utility below, you can add fleet names to the list. You can add new fleet names by clicking "Add Fleet."</p> 
-            <hr>
-
-            <!--Ninth stpe utility-->
-            <ul class="list-group">
-
-                <li class="list-group-item active">FLEET NAMES</li>
-
-                <div id = "fleet0">
                 
-                    <li class="list-group-item" id = "fleetCard0">
-                        
-                        <form>
-
-                            <div class="form-row">
-
-                                <div class="col">
-                                    <input type="text" class="form-control" id = "fleetName0">
-                                </div>
-
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-primary" onclick="deleteElement('fleetCard0')">Delete</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </li>
-
-                </div>
-
-            </ul>
-
+            <p>This defines what names will be used for fleets. In the utility below, you can add fleet names to the list. You can add new fleet names by clicking <span><button type="button" class="btn btn-primary btn-sm" onclick="addCard('fleetCard')">Add Fleet</button></span></p>   
+            
             <br>
 
-            <div align="right">
-                <button type="button" class="btn btn-primary" onclick="addCard('fleetCard')">Add Fleet</button>
+            <!--Ninth stpe utility-->
+            <div id = "fleet0">
+
+                <div class="input-group mb-3" id = fleetCard0>
+                    <input type="text" class="form-control" id = "fleetName0" placeholder="Fleet name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="deleteElement('fleetCard0')">Delete</button>
+                    </div>
+                </div>
+
             </div>
 
             <hr>
@@ -2496,8 +2403,1045 @@
 
             <!--Second file buttons-->
             <button class = "btn btn-primary" id="file2Info" onClick = "fileInfo('file2')" type="button"><i>Where to save?</i></button>
-            <a href="" class="btn btn-primary" id="download">DOWNLOAD</a>
+            <a href="" class="btn btn-primary" id="downloadFile2">DOWNLOAD</a>
             <button class = "btn btn-primary" id="file2Copy" onClick = "fileCopy('file2')">COPY</button>
+            <br><br>
+
+            <!--SECTION 3-->
+            <p><b><h2>SECTION 3: COUNTRY HISTORY</h2></b></p>
+            <hr>
+
+            <!--First step title-->
+            <p><b>(1) DEFINE THE GOVERNMENT TYPE</b></p>
+
+            <!--First step description-->
+            <p>A government provides your country with a unique way of ruling and gives unique bonuses. In the utility below, please select the type of government. Then, governments within that type will become available to choose from.</p>
+            
+            <select class="browser-default custom-select" id = "governmentSelect" onchange="getGovernmentGroupUtility()">
+
+                <option selected disabled>Pick a government type.</option>
+                <option value="monarchy">Monarchy</option>
+                <option value="republic">Republic</option>
+                <option value="theocracy">Theocracy</option>
+                <option value="tribalGovernment">Tribal Government</option>
+
+            </select>
+
+            <br>
+
+            <div id="monarchyHolder" style="visibility:hidden; display:none;">
+
+                <br>
+
+                <select class="browser-default custom-select" id = "monarchyGovernment">
+
+                    <option selected disabled>Pick a monarchy type.</option>
+
+                    <option value="autocracy_reform">Autocracy</option>
+                    <option value="celestial_empire">Celestial Empire</option>
+                    <option value="daimyo">Daimyo</option>
+                    <option value="elective_monarchy">Elective Monarchy</option>
+                    <option value="english_monarchy">English Monarchy</option>
+                    <option value="feudalism_reform">Feudal Nobility</option>
+                    <option value="feudal_theocracy">Feudal Theocracy</option>
+                    <option value="grand_duchy_reform">Grand Duchy</option>
+                    <option value="indep_daimyo">Independent Daimyo</option>
+                    <option value="indian_sultanate_reform">Indian Sultanate</option>
+                    <option value="iqta">Iqta</option>
+                    <option value="mamluk_government">Mamluk Government</option>
+                    <option value="mandala_reform">Mandala System</option>
+                    <option value="misl_confederacy_reform">Misl Confederacy</option>
+                    <option value="nayankara_reform">Nayankara System</option>
+                    <option value="ottoman_government">Ottoman Government</option>
+                    <option value="plutocratic_reform">Plutocracy</option>
+                    <option value="prussian_monarchy">Prussian Monarchy</option>
+                    <option value="rajput_kingdom">Rajput Kingdom</option>
+                    <option value="revolutionary_empire_reform">Revolutionary Empire</option>
+                    <option value="principality">Russian Principality</option>
+                    <option value="shogunate">Shogunate</option>
+                    <option value="tsardom">Tsardom</option>
+
+                </select>
+
+            </div>
+
+            <div id="republicHolder" style="visibility:hidden; display:none;">
+
+                <br>
+
+                <select class="browser-default custom-select" id = "republicGovernment">
+
+                    <option selected disabled>Pick a republic type.</option>
+
+                    <option value="administrative_republic">Administrative Republic</option>
+                    <option value="ambrosian_republic">Ambrosian Republic</option>
+                    <option value="american_republic">American Republic</option>
+                    <option value="black_market_consortium_government">Black Market Consortium Government</option>
+                    <option value="bureaucratic_despotism">Bureaucratic Despotism</option>
+                    <option value="colonial_government">Colonial Government</option>
+                    <option value="constitutional_republic">Constitutional Republic</option>
+                    <option value="cossacks_reform">Cossacks Government</option>
+                    <option value="dutch_republic">Dutch Republic</option>
+                    <option value="federal_republic">Federal Republic</option>
+                    <option value="free_city">Free City</option>
+                    <option value="noble_elite_reform">Noble Elite</option>
+                    <option value="oligarchy_reform">Oligarchy</option>
+                    <option value="peasants_republic">Peasants' Republic</option>
+                    <option value="pirate_kingdom">Pirate Kingdom</option>
+                    <option value="pirate_republic_reform">Pirate Republic</option>
+                    <option value="merchants_reform">Plutocracy</option>
+                    <option value="presidential_despot_reform">Presidental Despot</option>
+                    <option value="republican_dictatorship">Republican Dictatorship</option>
+                    <option value="revolutionary_republic_reform">Revolutionary Republic</option>
+                    <option value="trading_city">Trading City</option>
+                    <option value="veche_republic">Veche Republic</option>
+                    <option value="venice_merchants_reform">Venetian Government</option>
+                    <option value="war_against_the_world_government">War Against the World Government</option>
+
+                </select>
+            
+            </div>
+
+            <select class="browser-default custom-select" id = "theocracyGovernment" style="visibility:hidden; display:none;">
+
+                <option selected disabled>Pick a theocracy type.</option>
+
+                <option value="leading_clergy_reform">Clerical State</option>
+                <option value="monastic_order_reform">Monastic Order</option>
+                <option value="papacy_reform">Papacy</option>
+
+            </select>
+
+            <select class="browser-default custom-select" id = "tribalGovernment" style="visibility:hidden; display:none;">
+
+                <option selected disabled>Pick a tribal type.</option>
+
+                <option value="native">American Native Government</option>
+                <option value="gond_kingdom">Gond Kingdom</option>
+                <option value="great_mongol_state_reform">Great Mongol State</option>
+                <option value="siberian_tribe">Siberian Native Council</option>
+                <option value="steppe_horde">Steppe Nomads</option>
+                <option value="tribal_despotism">Tribal Despotism</option>
+                <option value="tribal_federation">Tribal Federation</option>
+                <option value="tribal_kingdom">Tribal Kingdom</option>
+
+            </select>
+
+            <br>
+
+            <select class="browser-default custom-select" id = "governmentRank" aria-describedby="governmentRankHelp">
+
+                <option selected disabled>Pick a government rank.</option>
+
+                <option value="1">Dutchy</option>
+                <option value="2">Kingdom</option>
+                <option value="3">Empire</option>
+
+            </select>
+            
+            <small id="governmentRankHelp" class="form-text text-muted">
+            You can read about government ranks <a href="https://eu4.paradoxwikis.com/Government#Government_rank">here</a>.
+            </small>
+
+            <hr>
+
+            <!--First step title-->
+            <p><b>(2) DEFINE THE STARTING MERCANTILISM</b></p>
+
+            <!--First step description-->
+            <p>Mercantilism determines how much trade power, embargo efficiency, and liberty desires in colonies your nation has. In the ulity below, you can enter a number from 0 to 100.</p>
+            
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="mercantilism" placeholder="Mercantilism" aria-describedby="basic-addon1">
+            </div>
+
+            <hr>
+
+            <!--First step title-->
+            <p><b>(3) DEFINE THE TECHNOLOGY GROUP</b></p>
+
+            <!--First step description-->
+            <p>Your technology group determines your starting institution tech penality and initial technology level. Addionally, you have access to different technologies depending on your technology group.</p>
+            
+            <select class="browser-default custom-select" id = "technologyGroup">
+
+                <option selected disabled>Pick a technology group.</option>
+
+                <optgroup label="Historical Technology Groups">
+                    <option value="andean">Andean</option>
+                    <option value="central_african">Central African</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="east_african">East African</option>
+                    <option value="eastern">Eastern</option>
+                    <option value="indian">Indian</option>
+                    <option value="mesoamerican">Mesoamerican</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="nomad_group">Nomad</option>
+                    <option value="north_american">North American</option>
+                    <option value="ottoman">Ottoman</option>
+                    <option value="south_american">South American</option>
+                    <option value="sub_saharan">Sub-Saharan</option>
+                    <option value="western">Western</option>
+
+                </optgroup>
+            
+                <optgroup label="Fantasy Technology Groups">
+                    <option value="high_american">High American</option>
+                </optgroup>                
+                
+            </select>
+
+            <hr>
+
+            <!--First step title-->
+            <p><b>(4) DEFINE THE STARTING RELIGION</b></p>
+
+            <!--First step description-->
+            <p>Your starting religion defines the state religion for your country. It does not determine what religion your provinces will have. In the utility below, you can select what religion you'd like your country to follow.</p>
+            
+            <select class="browser-default custom-select" id = "religionGroup" onchange="checkReligion()">
+
+                <option selected disabled>Pick a state religion.</option>
+
+                <optgroup label="Christian Religion Group">
+                    <option value="catholic">Catholic</option>
+                    <option value="anglican">Anglican</option>
+                    <option value="protestant">Protestant</option>
+                    <option value="reformed">Reformed</option>
+                    <option value="orthodox">Orthodox</option>
+                    <option value="coptic">Coptic</option>
+                </optgroup>
+            
+                <optgroup label="Muslim Religion Group">
+                    <option value="sunni">Sunni</option>
+                    <option value="shiite">Shia</option>
+                    <option value="ibadi">Ibadi</option>
+                </optgroup>
+
+                <optgroup label="Eastern Religion Group">
+                    <option value="buddhism">Buddhism</option>
+                    <option value="vajrayana">Vajrayana</option>
+                    <option value="mahayana">Mahayana</option>
+                    <option value="confucianism">Confucianism</option>
+                    <option value="shinto">Shinto</option>
+                </optgroup>
+
+                <optgroup label="Dharmic Religion Group">
+                    <option value="sikhism">Sikhism</option>
+                    <option value="hinduism">Hinduism</option>
+                </optgroup>
+
+                <optgroup label="Pagan Religion Group">
+                    <option value="animism">Animism</option>
+                    <option value="shamanism">Shamanism</option>
+                    <option value="totemism">Totemism</option>
+                    <option value="inti">Inti</option>
+                    <option value="nahuatl">Nahuatl</option>
+                    <option value="mesoamerican_religion">Mesoamerican</option>
+                    <option value="norse_pagan_reformed">Norse</option>
+                    <option value="tengri_pagan_reformed">Tengri</option>
+                </optgroup>
+
+                <optgroup label="Jewish Religion Group">
+                    <option value="jewish">Jewish</option>
+                </optgroup>
+
+                <optgroup label="Zoroastrian Religion Group">
+                    <option value="zoroastrian">Zoroastrian</option>
+                </optgroup>
+                
+            </select>
+
+            <br>
+
+            <div id = sunniHolder style="visibility:hidden; display:none;">
+
+                <br>
+
+                <select class="browser-default custom-select" id = "sunniSchool">
+
+                    <option selected disabled>Pick a Sunni school.</option>
+
+                    <option value="hanafi_school">Hanafi School</option>
+                    <option value="hanbali_school">Hanbali School</option>
+                    <option value="maliki_school">Maliki School</option>
+                    <option value="shafii_school">Shafii_school</option>
+
+                </select>
+
+            </div>
+
+            <div id = shiaHolder style="visibility:hidden; display:none;">
+
+                <br>
+
+                <select class="browser-default custom-select" id = "shiaSchool">
+
+                    <option selected disabled>Pick a Shia school.</option>
+        
+                    <option value="ismaili_school">Ismaili School</option>
+                    <option value="jafari_school">Jafari School</option>
+                    <option value="zaidi_school">Zaidi School</option>
+        
+                </select>
+
+            </div>
+
+            <hr>
+
+            <!--First step title-->
+            <p><b>(5) DEFINE THE PRIMARY AND ACCEPTED CULTURES</b></p>
+
+            <!--First step description-->
+            <p>The primary culture is the culture of your nation or rulers. Accepted cultures are cultures in your nation that have become significant enough to become accepted. In the utiity below, you can define your primary culture and then add accepted cultures. <a href="file:///C:/Users/Scott/Desktop/htmltest/cultures.html">Click here for a list of cultures.</a></p>
+            
+            <input type="text" class="form-control" placeholder="Enter a primary culture." id="primaryCulture">
+
+            <br>
+
+            <div id="acceptedCultureHolder">
+
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="addCard('acceptedCulture')">Add Accepted Culture</button>
+
+            <hr>
+
+            <!--First step title-->
+            <p><b>(6) DEFINE THE CAPITAL</b></p>
+
+            <!--First step description-->
+            <p>Defining the capital sets the capital province for your nation. You can also set it as a fixed capital, in which the AI will never move the capital. Most capitals in the game are unfixed. In the utility below, you can enter which province, defined by a number, is the capital province of your nation.<a href="https://eu4.paradoxwikis.com/Geographical_list_of_provinces"> Click here for a list of province IDs.</a></p>
+
+            <form>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <input type="text" class="form-control" placeholder="Enter a province ID." id="capitalID">
+
+                    </div>
+
+                    <div class="col">
+
+                        <select class="custom-select" id="fixCapital">
+                            <option value="notFixedCapital">Unfixed capital</option>
+                            <option value="fixedCapital">Fixed capital.</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <hr>
+
+            <p><b>(7) Add Historical Friends</b></p>
+
+            <p>This is an optional step to define what countries are considered a historical friend of your nation. Historical friends gain a relationship bonus towards one another and are more likely to ally. In the utility below, you can define the names or tags of the nations that should be considered a historical friend for your nation.</p>
+
+            <input type="text" class="form-control" placeholder="Enter a historical friend." id="historicalFriend0">
+
+            <br>
+
+            <div id="historicalFriendHolder">
+
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="addCard('friendCard')">Add Historical Friend</button>
+
+            <hr>
+
+            <p><b>(8) Add Historical Rivals</b></p>
+
+            <p>This is an optional step to define what countries are considered a historical rival of your nation. Historical rivals gains a negative relationship towards one another and are more likely to rival. In the utility below, you can define the names or tags of the nations that should be considered a historical rival for your nation.</p>
+
+            <input type="text" class="form-control" placeholder="Enter a historical rival." id="historicalRival0">
+
+            <br>
+
+            <div id="historicalRivalHolder">
+
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="addCard('rivalCard')">Add Historical Rival</button>
+
+            <hr>
+
+            <p><b>(9) Add a National Focus</b></p>
+
+            <p>This is an optional step, where you can define what national focus your country should have. In the utility below, pick "Administrative", "Diplomatic", or "Military" for your country to initially focus on.</p>
+
+            <select class="custom-select" id="nationalFocus">
+                <option selected disabled>Pick a national focus.</option>
+                <option value="ADM">Administrative</option>
+                <option value="DIP">Diplomatic</option>
+                <option value="MIL">Military</option>
+            </select>
+
+            <hr>
+
+            <p><b>(10) Determine Army Professionalism</b></p>
+
+            <p>This is an optional step, in which you can define the starting army professionalism of your nation. In the utility below, enter a number from 0 to 100.</p>
+        
+            <input type="text" class="form-control" id="armyProfessionalism" placeholder="Enter army professionalism." aria-describedby="basic-addon1">
+
+            <hr>
+
+            <p><b>(11) Add Starting Monarch</b></p>
+
+            <p>Here you can define your starting monarch and heir for the 1444 start date.</p>
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <p><b>REQUIRED</b></p>
+
+                    <label for="hisMonName">Name:</label>
+                    <input type="text" id="hisMonName" class="form-control" aria-describedby="hisMonNameHelp">
+                    <small id="hisMonNameHelp" class="form-text text-muted">
+                    The name of the monarch, minus their dynasty.
+                    </small>
+
+                    <label for="hisMonDynasty">Dynasty:</label>
+                    <input type="text" id="hisMonDynasty" class="form-control" aria-describedby="hisMonDynastyHelp">
+                    <small id="hisMonDynastyHelp" class="form-text text-muted">
+                    The name of the monarch's dynasty. <b>Only fill out if the government type is a monarchy.</b>
+                    </small>
+
+                    <label for="hisMonAge">Age:</label>
+                    <input type="text" id="hisMonAge" class="form-control" aria-describedby="hisMonAgeHelp">
+                    <small id="hisMonAgeHelp" class="form-text text-muted">
+                    The age of the monarch.
+                    </small>
+
+                    <form>
+
+                        <div class="row">
+
+                            <div class="col">
+
+                                <label for="hisMonADM">ADM Power:</label>
+                                <input type="text" id="hisMonADM" class="form-control" aria-describedby="hisMonADMHelp">
+                                <small id="hisMonADMHelp" class="form-text text-muted">
+                                The administrative power of the monarch.
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisMonDIP">DIP Power:</label>
+                                <input type="text" id="hisMonDIP" class="form-control" aria-describedby="hisMonDIPHelp">
+                                <small id="hisMonDIPHelp" class="form-text text-muted">
+                                The diplomatic power of the monarch.
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisMonMIL">MIL Power:</label>
+                                <input type="text" id="hisMonMIL" class="form-control" aria-describedby="hisMonMILHelp">
+                                <small id="hisMonMILHelp" class="form-text text-muted">
+                                The military power of the monarch.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    <hr>
+
+                    <p><b>MONARCH LEADER (OPTIONAL)</b></p>
+
+                    <p>If the monarch should be marked as a leader (general, admiral, conquistador), you can define their stats here.</p>
+
+                    <label for="hisMonLeaderName">Leader Name:</label>
+                    <input type="text" id="hisMonLeaderName" class="form-control" aria-describedby="hisMonLeaderNameHelp">
+                    <small id="hisMonLeaderNameHelp" class="form-text text-muted">
+                    The name the monarch should use when leading. This is usually just the name of the monarch.
+                    </small>
+
+                    <label for="hisMonLeaderType">Leader Type:</label>
+                    <select class="custom-select" id="hisMonLeaderType" aria-describedby="hisMonLeaderTypeHelp">
+                        <option selected disabled>Pick a leader type.</option>
+                        <option value="general">General</option>
+                        <option value="admiral">Admiral</option>
+                        <option value="conquistador">Conquistador</option>
+                    </select>
+                    <small id="hisMonLeaderTypeHelp" class="form-text text-muted">
+                    The type of the leader.
+                    </small>
+
+                    <form>
+
+                        <div class="row">
+
+                            <div class="col">
+
+                                <label for="hisMonLeaderFire">Fire:</label>
+                                <input type="text" id="hisMonLeaderFire" class="form-control" aria-describedby="hisMonLeaderFireHelp">
+                                <small id="hisMonLeaderFireHelp" class="form-text text-muted">
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                    <label for="hisMonLeaderShock">Shock:</label>
+                                    <input type="text" id="hisMonLeaderShock" class="form-control" aria-describedby="hisMonLeaderShockHelp">
+                                    <small id="hisMonLeaderShockHelp" class="form-text text-muted">
+                                    </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisMonLeaderManuever">Manu.:</label>
+                                <input type="text" id="hisMonLeaderManuever" class="form-control" aria-describedby="hisMonLeaderManueverHelp">
+                                <small id="hisMonLeaderManueverHelp" class="form-text text-muted">
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisMonLeaderSiege">Siege:</label>
+                                <input type="text" id="hisMonLeaderSiege" class="form-control" aria-describedby="hisMonLeaderSiegeHelp">
+                                <small id="hisMonLeaderSiegeHelp" class="form-text text-muted">
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    <hr>
+
+                    <p><b>RULER PERSONALITY (OPTIONAL)</b></p>
+
+                    <p>Here you can add pre-defined personalities for your ruler. A ruler can have up to three personalities. After selecting a personality, information about it will be displayed. You can read more about personalities <a href="https://eu4.paradoxwikis.com/Personalities">here</a>.</p>
+
+                    <!--First Personality-->
+
+                    <select class="custom-select" id="hisMonPersonality00" onchange="displayPersonality('hisMonPersonality00','personalityDesc00')">
+
+                        <option value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityDesc00" style='visibility:hidden; display:none;'>
+
+                    </div>
+
+                    <br>
+                    
+                    <!--Second Personality-->
+
+                    <select class="custom-select" id="hisMonPersonality01" onchange="displayPersonality('hisMonPersonality01','personalityDesc01')">
+
+                        <option  value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityDesc01" style='visibility:hidden; display:none;'>
+
+                    </div>
+
+                    <br>
+
+                    <!--Third Personality-->
+
+                    <select class="custom-select" id="hisMonPersonality02" onchange="displayPersonality('hisMonPersonality02','personalityDesc02')">
+
+                        <option value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityDesc02" style='visibility:hidden; display:none;'>
+
+                    </div>
+
+                    <hr>
+
+                    <p><b>DEFINE HEIR (OPTIONAL)</b></p>
+
+                    <p>Here you can add an heir for your country. Defining heirs works much the same way as defining monarchs. <b>Only monarchies should define heirs</b>.</p>
+                    
+                    <label for="hisHeirName">Heir Name:</label>
+                    <input type="text" id="hisHeirName" class="form-control" aria-describedby="hisHeirNameHelp">
+                    <small id="hisHeirNameHelp" class="form-text text-muted">This name <b>should not</b> include their regnal or dynasty. Example: Mehmed</small>
+
+                    <label for="hisHeirMonName">Monarch Name:</label>
+                    <input type="text" id="hisHeirMonName" class="form-control" aria-describedby="hisHeirMonNameHelp">
+                    <small id="hisHeirMonNameHelp" class="form-text text-muted">This name <b>should</b> include their regnal and any other aspects of their name. Example: Mehmet II Fatih</small>
+
+                    <label for="hisHeirDynasty">Dynasty Name:</label>
+                    <input type="text" id="hisHeirDynasty" class="form-control" aria-describedby="hisHeirDynastyHelp">
+                    <small id="hisHeirDynastyHelp" class="form-text text-muted">The dynasty of the heir. Example: Osmanoglu</small>
+
+                    <label for="hisHeirAge">Age:</label>
+                    <input type="text" id="hisHeirAge" class="form-control" aria-describedby="hisHeirAgeHelp">
+                    <small id="hisHeirAgeHelp" class="form-text text-muted">The age of the heir.</small>
+
+                    <label for="hisHeirClaim">Claim Strength:</label>
+                    <input type="text" id="hisHeirClaim" class="form-control" aria-describedby="hisHeirClaimHelp">
+                    <small id="hisHeirClaimHelp" class="form-text text-muted">The claim strength of the heir. This should be a number from 0-100, with 100 being the most legitmate claim.</small>
+
+                    <form>
+
+                        <div class="row">
+
+                            <div class="col">
+
+                                <label for="hisHeirADM">ADM Power</label>
+                                <input type="text" id="hisMonADM" class="form-control" aria-describedby="hisHeirADMHelp">
+                                <small id="hisHeirADMHelp" class="form-text text-muted">
+                                The administrative power of the heir.
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisHeirDIP">DIP Power</label>
+                                <input type="text" id="hisHeirDIP" class="form-control" aria-describedby="hisHeirDIPHelp">
+                                <small id="hisHeirDIPHelp" class="form-text text-muted">
+                                The diplomatic power of the heir.
+                                </small>
+
+                            </div>
+
+                            <div class="col">
+
+                                <label for="hisHeirMIL">MIL Power</label>
+                                <input type="text" id="hisHeirMIL" class="form-control" aria-describedby="hisHeirMILHelp">
+                                <small id="hisHeirMILHelp" class="form-text text-muted">
+                                The military power of the heir.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    <p><b>DEFINE HEIR PERSONALITY (OPTIONAL)</b></p>
+
+                    <p>Here you can add pre-defined personalities for your heir. An heir can have up to three personalities. After selecting a personality, information about it will be displayed. You can read more about personalities <a href="https://eu4.paradoxwikis.com/Personalities">here</a>.</p>
+                    
+                    <!--First Heir Personality-->
+                    <select class="custom-select" id="hisHeirPersonality00" onchange="displayPersonality('hisHeirPersonality00','personalityHeirDesc00')">
+
+                        <option value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityHeirDesc00" style='visibility:hidden; display:none;'></div>
+
+                    <br>
+
+                    <!--Second Heir Personality-->
+                    <select class="custom-select" id="hisHeirPersonality01" onchange="displayPersonality('hisHeirPersonality01','personalityHeirDesc01')">
+
+                        <option value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityHeirDesc01" style='visibility:hidden; display:none;'>
+
+                    </div>
+
+                    <br>
+
+                    <!--Third Heir Personality-->
+                    <select class="custom-select" id="hisHeirPersonality02" onchange="displayPersonality('hisHeirPersonality02','personalityHeirDesc02')">
+
+                        <option value="no_personality" selected>No personality.</option>
+
+                        <optgroup label="Positive Traits">
+
+                            <option value="architectural_visionary_personality">Architectural Visionary</option>
+                            <option value="benevolent_personality">Benevolent</option>
+                            <option value="bold_fighter_personality">Bold Fighter</option>
+                            <option value="calm_personality">Calm</option>
+                            <option value="careful_personality">Careful</option>
+                            <option value="charismatic_negotiator_personality">Charismatic Negotiator</option>
+                            <option value="conqueror_personality">Conqueror</option>
+                            <option value="entrepreneur_personality">Entrepreneur</option>
+                            <option value="expansionist_personality">Expansionist</option>
+                            <option value="fertile_personality">Fertile</option>
+                            <option value="fierce_negotiator_personality">Fierce Negotiator</option>
+                            <option value="free_thinker_personality">Free Thinker</option>
+                            <option value="humane_personality">Humane</option>
+                            <option value="incorruptible_personality">Incorruptible</option>
+                            <option value="industrious_personality">Industrious</option>
+                            <option value="inspiring_leader_personality">Inspiring Leader</option>
+                            <option value="intricate_webweaver_personality">Intricate Webweaver</option>
+                            <option value="just_personality">Just</option>
+                            <option value="kind_hearted_personality">Kind-Hearted</option>
+                            <option value="lawgiver_personality">Lawgiver</option>
+                            <option value="martial_educator_personality">Martial Educator</option>
+                            <option value="midas_touched_personality">Midas Touched</option>
+                            <option value="navigator_personality">Navigator</option>
+                            <option value="pious_personality">Pious</option>
+                            <option value="righteous_personality">Righteous</option>
+                            <option value="scholar_personality">Scholar</option>
+                            <option value="silver_tongue_personality">Silver Tongue</option>
+                            <option value="strict_personality">Strict</option>
+                            <option value="tactical_genius_personality">Tactical Genius</option>
+                            <option value="tolerant_personality">Tolerant</option>
+                            <option value="well_advised_personality">Well Advised</option>
+                            <option value="well_connected_personality">Well Connected</option>
+                            <option value="zealot_personality">Zealot</option>
+
+                        </optgroup>
+
+                        <optgroup label="Negative Traits">
+
+                            <option value="babbling_buffoon_personality">Babbling Buffoon</option>
+                            <option value="craven_personality">Craven</option>
+                            <option value="cruel_personality">Cruel</option>
+                            <option value="embezzler_personality">Embezzler</option>
+                            <option value="greedy_personality">Greedy</option>
+                            <option value="indulgent_personality">Indulgent</option>
+                            <option value="infertile_personality">Infertile</option>
+                            <option value="loose_lips_personality">Loose Lips</option>
+                            <option value="malevolent_personality">Malevolent</option>
+                            <option value="naive_enthusiast_personality">Naive Enthusiast</option>
+                            <option value="obsessive_perfectionist_personality">Obsessive Perfectionist</option>
+                            <option value="petty_personality">Petty</option>
+                            <option value="sinner_personality">Sinner</option>
+
+                        </optgroup>
+
+                    </select>
+
+                    <br>
+
+                    <div class="alert alert-primary" role="alert" id="personalityHeirDesc02" style='visibility:hidden; display:none;'>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="createFile3()">Generate Country History File</button>
+
+            <hr>
+
+            <!--Third file title-->
+            <p id = "file3Name"><b>FILE NAME:</b></p>
+
+            <!--Third file contents-->
+            <textarea class="form-control" id="file3">Weep</textarea>
+            <br>
+
+            <!--Third file buttons-->
+            <button class = "btn btn-primary" id="file3Info" onClick = "fileInfo('file3')" type="button"><i>Where to save?</i></button>
+            <a href="" class="btn btn-primary" id="downloadFile3">DOWNLOAD</a>
+            <button class = "btn btn-primary" id="file3Copy" onClick = "fileCopy('file3')">COPY</button>
             <br><br>
 
         </div>
@@ -2951,62 +3895,10 @@
 
     }
 
-    leaderNumber = 1;
-
-    function addLeader () {
-
-        leaderCard="";
-        leaderCard += "<li class=\"list-group-item\" id = \"leaderCard"+leaderNumber+"\">";
-        leaderCard += "<form>";
-        leaderCard += "<div class=\"form-row\">";
-        leaderCard += "<div class=\"col\">";
-        leaderCard += "<input type=\"text\" class=\"form-control\" id = \"leaderName"+leaderNumber+"\">";
-        leaderCard += "<\/div>";
-        leaderCard += "<div class=\"col-auto\">";
-        leaderCard += "<button type=\"button\" class=\"btn btn-primary\" onclick=\"deleteLeaderCard('leaderCard"+leaderNumber+"')\">Delete<\/button>";
-        leaderCard += "<\/div>";
-        leaderCard += "<\/div>";
-        leaderCard += "<\/form>";
-        leaderCard += "<\/li>";
-
-        leader0 = document.getElementById("leader0");
-
-        leader0.insertAdjacentHTML('beforeend', leaderCard);
-
-        leaderNumber++;
-
-    }
-
     function deleteLeaderCard (cardName) {
 
         specifiedCard = document.getElementById(cardName);
         specifiedCard.remove();
-
-    }
-
-    shipNumber = 1;
-
-    function addShip () {
-
-        shipCard="";
-        shipCard += "<li class=\"list-group-item\" id = \"shipCard"+shipNumber+"\">";
-        shipCard += "<form>";
-        shipCard += "<div class=\"form-row\">";
-        shipCard += "<div class=\"col\">";
-        shipCard += "<input type=\"text\" class=\"form-control\" id = \"shipName"+shipNumber+"\">";
-        shipCard += "<\/div>";
-        shipCard += "<div class=\"col-auto\">";
-        shipCard += "<button type=\"button\" class=\"btn btn-primary\" onclick=\"deleteElement('shipCard"+shipNumber+"')\">Delete<\/button>";
-        shipCard += "<\/div>";
-        shipCard += "<\/div>";
-        shipCard += "<\/form>";
-        shipCard += "<\/li>";
-
-        ship0 = document.getElementById("ship0");
-
-        ship0.insertAdjacentHTML('beforeend', shipCard);
-
-        shipNumber++;
 
     }
 
@@ -3016,26 +3908,44 @@
 
     }
 
+    leaderNumber = 1;
+    shipNumber = 1;
     armyNumber = 1;
     fleetNumber = 1;
 
+    cultureNumber = 1;
+    friendNumber = 1;
+    rivalNumber = 1;
+
     function addCard (cardName) {
+
+        if (cardName == "leaderCard") {
+
+            leaderCard = "";
+            leaderCard += "<div class=\"input-group mb-3\" id = leaderCard"+leaderNumber+">";
+            leaderCard += "<input type=\"text\" class=\"form-control\" id = \"leaderName"+leaderNumber+"\" placeholder=\"Leader name\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\">";
+            leaderCard += "<div class=\"input-group-append\">";
+            leaderCard += "<button class=\"btn btn-outline-secondary\" type=\"button\" id=\"button-addon2\" onclick=\"deleteElement('leaderCard"+leaderNumber+"')\">Delete<\/button>";
+            leaderCard += "<\/div>";
+            leaderCard += "<\/div>";
+
+            leader0 = document.getElementById("leader0");
+
+            leader0.insertAdjacentHTML('beforeend', leaderCard);
+
+            leaderNumber++;
+
+        }
 
         if (cardName == "armyCard") {
 
-            armyCard="";
-            armyCard += "<li class=\"list-group-item\" id = \"armyCard"+armyNumber+"\">";
-            armyCard += "<form>";
-            armyCard += "<div class=\"form-row\">";
-            armyCard += "<div class=\"col\">";
-            armyCard += "<input type=\"text\" class=\"form-control\" id = \"armyName"+armyNumber+"\">";
-            armyCard += "<\/div>";
-            armyCard += "<div class=\"col-auto\">";
-            armyCard += "<button type=\"button\" class=\"btn btn-primary\" onclick=\"deleteElement('armyCard"+armyNumber+"')\">Delete<\/button>";
+            armyCard = "";
+            armyCard += "<div class=\"input-group mb-3\" id = armyCard"+armyNumber+">";
+            armyCard += "<input type=\"text\" class=\"form-control\" id = \"armyName"+armyNumber+"\" placeholder=\"Army name\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\">";
+            armyCard += "<div class=\"input-group-append\">";
+            armyCard += "<button class=\"btn btn-outline-secondary\" type=\"button\" id=\"button-addon2\" onclick=\"deleteElement('armyCard"+armyNumber+"')\">Delete<\/button>";
             armyCard += "<\/div>";
             armyCard += "<\/div>";
-            armyCard += "<\/form>";
-            armyCard += "<\/li>";
 
             army0 = document.getElementById("army0");
 
@@ -3047,19 +3957,13 @@
 
         if (cardName == "shipCard") {
 
-            shipCard="";
-            shipCard += "<li class=\"list-group-item\" id = \"shipCard"+shipNumber+"\">";
-            shipCard += "<form>";
-            shipCard += "<div class=\"form-row\">";
-            shipCard += "<div class=\"col\">";
-            shipCard += "<input type=\"text\" class=\"form-control\" id = \"shipName"+shipNumber+"\">";
-            shipCard += "<\/div>";
-            shipCard += "<div class=\"col-auto\">";
-            shipCard += "<button type=\"button\" class=\"btn btn-primary\" onclick=\"deleteElement('shipCard"+shipNumber+"')\">Delete<\/button>";
+            shipCard = "";
+            shipCard += "<div class=\"input-group mb-3\" id = shipCard"+shipNumber+">";
+            shipCard += "<input type=\"text\" class=\"form-control\" id = \"shipName"+shipNumber+"\" placeholder=\"Ship name\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\">";
+            shipCard += "<div class=\"input-group-append\">";
+            shipCard += "<button class=\"btn btn-outline-secondary\" type=\"button\" id=\"button-addon2\" onclick=\"deleteElement('shipCard"+shipNumber+"')\">Delete<\/button>";
             shipCard += "<\/div>";
             shipCard += "<\/div>";
-            shipCard += "<\/form>";
-            shipCard += "<\/li>";
 
             ship0 = document.getElementById("ship0");
 
@@ -3071,25 +3975,55 @@
 
         if (cardName == "fleetCard") {
 
-            fleetCard="";
-            fleetCard += "<li class=\"list-group-item\" id = \"fleetCard"+fleetNumber+"\">";
-            fleetCard += "<form>";
-            fleetCard += "<div class=\"form-row\">";
-            fleetCard += "<div class=\"col\">";
-            fleetCard += "<input type=\"text\" class=\"form-control\" id = \"fleetName"+fleetNumber+"\">";
-            fleetCard += "<\/div>";
-            fleetCard += "<div class=\"col-auto\">";
-            fleetCard += "<button type=\"button\" class=\"btn btn-primary\" onclick=\"deleteElement('fleetCard"+fleetNumber+"')\">Delete<\/button>";
+            fleetCard = "";
+            fleetCard += "<div class=\"input-group mb-3\" id = fleetCard"+fleetNumber+">";
+            fleetCard += "<input type=\"text\" class=\"form-control\" id = \"fleetName"+fleetNumber+"\" placeholder=\"Fleet name\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\">";
+            fleetCard += "<div class=\"input-group-append\">";
+            fleetCard += "<button class=\"btn btn-outline-secondary\" type=\"button\" id=\"button-addon2\" onclick=\"deleteElement('fleetCard"+fleetNumber+"')\">Delete<\/button>";
             fleetCard += "<\/div>";
             fleetCard += "<\/div>";
-            fleetCard += "<\/form>";
-            fleetCard += "<\/li>";
 
             fleet0 = document.getElementById("fleet0");
 
             fleet0.insertAdjacentHTML('beforeend', fleetCard);
 
             fleetNumber++;
+
+        }
+
+        if (cardName == "acceptedCulture") {
+
+            cultureCard = "<input type=\"text\" class=\"form-control\" placeholder=\"Enter an accepted culture.\" id=\"acceptedCulture"+cultureNumber+"\"><br>";
+
+            cultureHolder = document.getElementById("acceptedCultureHolder");
+
+            cultureHolder.insertAdjacentHTML('beforeend',cultureCard);
+
+            cultureNumber++;
+
+        }
+
+        if (cardName == "friendCard") {
+
+            friendCard = "<input type=\"text\" class=\"form-control\" placeholder=\"Enter a historical friend.\" id=\"historicalFriend"+friendNumber+"\"><br>";
+
+            friendHolder = document.getElementById("historicalFriendHolder");
+
+            friendHolder.insertAdjacentHTML('beforeend',friendCard);
+
+            friendNumber++;
+
+        }
+
+        if (cardName == "rivalCard") {
+
+            rivalCard = "<input type=\"text\" class=\"form-control\" placeholder=\"Enter a historical rival.\" id=\"historicalRival"+rivalNumber+"\"><br>";
+
+            rivalHolder = document.getElementById("historicalRivalHolder");
+
+            rivalHolder.insertAdjacentHTML('beforeend',rivalCard);
+
+            rivalNumber++;
 
         }
 
@@ -3101,6 +4035,8 @@
     graphicalCulture = "NO_GRAPHICAL_CULTURE_SELECTED"
 
     function createFile2 () {
+
+        enteredName = document.getElementById("nameUtility").value;
 
         redInput = document.getElementById("redInput").value;
         greenInput = document.getElementById("greenInput").value;
@@ -3120,22 +4056,25 @@
         historicalUnitGroup = document.getElementById("historicalUnitGroupSelect").value;
         
         //Updates the file name indicator.
-        file2Name.innerHTML = "<b>FILE NAME: "+tag.toUpperCase()+".txt</b>";
+        file2Name.innerHTML = "<b>FILE NAME: "+enteredName+".txt</b>";
 
         //Determines the name of the file.
-        file2Name = tag.toUpperCase()+".txt";
+        file2Name = enteredName+".txt";
 
         //Determines the contents of the file.
         file2Content = "";
 
         //Section 1 of File2: Title
         file2Content += "#Country Name: Please see filename.&#10;";
+        file2Content += "&#10;";
 
         //Section 2 of File 2: Graphical Culture
         file2Content += "graphical_culture = "+graphicalCulture+"&#10;";
+        file2Content += "&#10;";
 
         //Section 3 of File 2: Color
         file2Content += "color = { "+redInput+" "+greenInput+" "+blueInput+" }&#10;";
+        file2Content += "&#10;";
 
         //Section 4 of File 2: Historical Idea Groups
         file2Content += "historical_idea_groups = {&#10;";
@@ -3148,6 +4087,7 @@
         file2Content += "   "+historicalGroup7+"&#10;";
         file2Content += "   "+historicalGroup8+"&#10;";
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 5 of File 2: Historical Units
         file2Content += "historical_units = {&#10;";
@@ -3264,6 +4204,7 @@
         }
 
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 6 of File 2: Monarch Names
         file2Content += "monarch_names = {&#10;";
@@ -3272,90 +4213,879 @@
 
         for (i = 0; i < monarchNumber; i++) {
 
-            alert(document.getElementById("monarchName"+i).value);
-            alert(document.getElementById("monarchRegnal"+i).value);
-            alert(document.getElementById("monarchSex"+i).value);
-            alert(document.getElementById("monarchChance"+i).value);
+            //Create a variable of each leaderName.
+            var element = document.getElementById("monarchName"+i);
+ 
+            //If it isn't "undefined" and it isn't "null", then it exists.
+            if(typeof(element) != 'undefined' && element != null){
 
-            monarchName = document.getElementById("monarchName"+i).value;
-            monarchRegnal = document.getElementById("monarchRegnal"+i).value;
-            monarchChance = document.getElementById("monarchChance"+i).value;
+                //Gets that monarch's name
+                monarchName = document.getElementById("monarchName"+i).value;
 
-            monarchSex = document.getElementById("monarchSex"+i).value;
+                //Gets that monarch's regnal
+                monarchRegnal = document.getElementById("monarchRegnal"+i).value;
 
-            file2Content += '   "'+monarchName+' #'+monarchRegnal+'" = '+monarchChance+"&#10;";
+                //Gets that monarch's chance
+                monarchChance = document.getElementById("monarchChance"+i).value;
+
+                //Gets that monarch's sex
+                monarchSex = document.getElementById("monarchSex"+i).value;
+
+                //Setting Female's chance to -1
+                if (monarchSex == "female") {
+
+                    monarchChance = "-1";
+
+                }
+
+                if (monarchRegnal == "") {
+
+                    monarchRegnal = "0";
+
+                }
+
+                //Adds the monarch information to the file
+                file2Content += '   "'+monarchName+' #'+monarchRegnal+'" = '+monarchChance+"&#10;";
+
+            }
 
         }
 
+        //Ends section 6 of File 2: Monarch Names
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 7 of File 2: Leader Names
-        file2Content += "leader_names = {";
+        file2Content += "leader_names = {&#10;";
 
         for (i = 0; i < leaderNumber; i++) {
 
-            //Single word names are printed plainly on new line.
-            //Multiple word names are printed with "" around them.
+            //Create a variable of each leaderName.
+            var element = document.getElementById("leaderName"+i);
+ 
+            //If it isn't "undefined" and it isn't "null", then it exists.
+            if(typeof(element) != 'undefined' && element != null){
+
+                //Gets each leaderName
+                leaderName = document.getElementById("leaderName"+i).value;
+
+                //If the leader name has a space, print with quotes. Else, print plainly
+                if (leaderName.indexOf(" ") > -1) {
+
+                    file2Content += '   "'+leaderName+'"&#10;';
+
+                } else {
+
+                    file2Content += "   "+leaderName+"&#10;";
+
+                }
+
+            }
 
         }
 
+        //Ends section 7 of File 2: Leader Names
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 8 of File 2: Ship Names
-        file2Content += "ship_names = {";
+        file2Content += "ship_names = {&#10;";
 
         for (i = 0; i < shipNumber; i++) {
 
-            //Single word names are printed plainly on new line.
-            //Multiple word names are printed with "" around them.
+            //Create a variable of each leaderName.
+            var element = document.getElementById("shipName"+i);
+ 
+            //If it isn't "undefined" and it isn't "null", then it exists.
+            if(typeof(element) != 'undefined' && element != null){
+
+                //Gets each leaderName
+                shipName = document.getElementById("shipName"+i).value;
+
+                //If the leader name has a space, print with quotes. Else, print plainly
+                if (shipName.indexOf(" ") > -1) {
+
+                    file2Content += '   "'+shipName+'"&#10;';
+
+                } else {
+
+                    file2Content += "   "+shipName+"&#10;";
+
+                }
+
+            }
 
         }
 
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 9 of File 2: Army Names
-        file2Content += "army_names = {";
+        file2Content += "army_names = {&#10;";
 
         for (i = 0; i < armyNumber; i++) {
 
-            //Single word names are printed plainly on new line.
-            //Multiple word names are printed with "" around them.
-            //This should be a default option when naming armies: "Armée de $PROVINCE$" or at least notice this keyword as an option.
+            //Create a variable of each leaderName.
+            var element = document.getElementById("armyName"+i);
+ 
+            //If it isn't "undefined" and it isn't "null", then it exists.
+            if(typeof(element) != 'undefined' && element != null){
+
+                //Gets each leaderName
+                armyName = document.getElementById("armyName"+i).value;
+
+                //If the leader name has a space, print with quotes. Else, print plainly
+                if (armyName.indexOf(" ") > -1) {
+
+                    file2Content += '   "'+armyName+'"&#10;';
+
+                } else {
+
+                    file2Content += "   "+armyName+"&#10;";
+
+                }
+
+            }
 
         }
 
         file2Content += "}&#10;";
+        file2Content += "&#10;";
 
         //Section 7 of File 2: Leader Names
-        file2Content += "fleet_names = {";
+        file2Content += "fleet_names = {&#10;";
 
         for (i = 0; i < fleetNumber; i++) {
 
-            //Single word names are printed plainly on new line.
-            //Multiple word names are printed with "" around them.
+            //Create a variable of each leaderName.
+            var element = document.getElementById("fleetName"+i);
+ 
+            //If it isn't "undefined" and it isn't "null", then it exists.
+            if(typeof(element) != 'undefined' && element != null){
+
+                //Gets each leaderName
+                fleetName = document.getElementById("fleetName"+i).value;
+
+                //If the leader name has a space, print with quotes. Else, print plainly
+                if (fleetName.indexOf(" ") > -1) {
+
+                    file2Content += '   "'+fleetName+'"&#10;';
+
+                } else {
+
+                    file2Content += "   "+fleetName+"&#10;";
+
+                }
+
+            }
 
         }
 
         file2Content += "}&#10;";
-
-        
-
-        //Need alerts for if information is blank.
+        file2Content += "&#10;";
 
         //Determines the contents of the text area.
         file2.innerHTML = file2Content;
 
+        re = /&#10;/gi;
+        file2ContentTXT = file2Content.replace(re, "\r\n");
+
         //Creates the file.
-        myFile = new Blob([file2Content], {type: 'text/plain'});
+        myFile = new Blob([file2ContentTXT], {type: 'text/plain'});
 
         //Accessing Windows properties.
         window.URL = window.URL || window.webkitURL;
 
         //Creating the download link.
-        document.getElementById('download').setAttribute('href', window.URL.createObjectURL(myFile));
+        document.getElementById('downloadFile2').setAttribute('href', window.URL.createObjectURL(myFile));
 
         //Adding the download attribute and linking it to file1.
-        document.getElementById('download').setAttribute('download', file2Name);
+        document.getElementById('downloadFile2').setAttribute('download', file2Name);
+
+    }
+
+    function getGovernmentGroupUtility () {
+
+        alert(document.getElementById("governmentSelect").value);
+
+        governmentSelect = document.getElementById("governmentSelect").value;
+
+        if (governmentSelect == "monarchy") {
+
+            monarchyGovernment = document.getElementById("monarchyHolder");
+
+            monarchyGovernment.style.visibility = "visible";
+
+            monarchyGovernment.style.display = "block";
+
+        } else if (governmentSelect == "republic") {
+
+            republicGovernment = document.getElementById("republicHolder");
+
+            republicGovernment.style.visibility = "visible";
+
+            republicGovernment.style.display = "block";
+
+        } else if (governmentSelect == "theocracy") {
+
+            theocracyGovernment = document.getElementById("theocracyGovernment");
+
+            theocracyGovernment.style.visibility = "visible";
+
+            theocracyGovernment.style.display = "block";
+
+        } else if (governmentSelect == "tribalGovernment") {
+
+            tribalGovernment = document.getElementById("tribalGovernment");
+
+            tribalGovernment.style.visibility = "visible";
+
+            tribalGovernment.style.display = "block";
+
+        }
+
+    }
+
+    function checkReligion () {
+
+        clearReligionOptions();
+
+        religionGroup = document.getElementById("religionGroup").value;
+
+        if (religionGroup == "sunni") {
+
+            sunniSchool = document.getElementById("sunniHolder");
+
+            sunniSchool.style.visibility = "visible";
+
+            sunniSchool.style.display = "block";
+            
+        } else if (religionGroup == "shiite") {
+
+            shiaSchool = document.getElementById("shiaHolder");
+
+            shiaSchool.style.visibility = "visible";
+
+            shiaSchool.style.display = "block";
+
+        }
+
+    }
+
+    function clearReligionOptions () {
+
+        sunniSchool = document.getElementById("sunniHolder");
+
+        sunniSchool.style.visibility = "hidden";
+
+        sunniSchool.style.display = "none";
+
+        shiaSchool = document.getElementById("shiaHolder");
+
+        shiaSchool.style.visibility = "hidden";
+
+        shiaSchool.style.display = "none";
+
+    }
+
+    function displayPersonality (targetSelect, targetDesc) {
+
+        selectedPersonality = document.getElementById(targetSelect).value;
+
+        personalityDesc = document.getElementById(targetDesc);
+
+        if (selectedPersonality == "no_personality") {
+
+            personalityDesc.style.visibility = "hidden";
+
+            personalityDesc.style.display = "none";
+
+        } else {
+
+            personalityDesc.style.visibility = "visible";
+
+            personalityDesc.style.display = "block";
+
+        }
+
+        if (selectedPersonality == "just_personality") {
+
+            personalityDesc.innerHTML = "-2 National Unrest";
+
+        }
+
+        if (selectedPersonality == "righteous_personality") {
+
+            personalityDesc.innerHTML = "+1 Yearly Legitimacy, +0.5 Yearly Republican Tradition";
+
+        }
+
+        if (selectedPersonality == "tolerant_personality") {
+
+            personalityDesc.innerHTML = "+1 Tolerance of Heretic, +1 Tolerance of Heathens";
+
+        }
+
+        if (selectedPersonality == "kind_hearted_personality") {
+
+            personalityDesc.innerHTML = "-0.05 Monthly War Exhaustion";
+
+        }
+
+        if (selectedPersonality == "free_thinker_personality") {
+
+            personalityDesc.innerHTML = "-5% Idea Cost";
+
+        }
+
+        if (selectedPersonality == "well_connected_personality") {
+
+            personalityDesc.innerHTML = "-20% Advisor Cost";
+
+        }
+
+        if (selectedPersonality == "calm_personality") {
+
+            personalityDesc.innerHTML = "-10% Stability Cost";
+
+        }
+
+        if (selectedPersonality == "careful_personality") {
+
+            personalityDesc.innerHTML = "-10% Aggressive Expansion Impact";
+
+        }
+
+        if (selectedPersonality == "secretive_personality") {
+
+            personalityDesc.innerHTML = "+20% Foreign Spy Detection";
+
+        }
+
+        if (selectedPersonality == "intricate_webweaver_personality") {
+
+            personalityDesc.innerHTML = "+30% Spy Network Construction";
+
+        }
+
+        if (selectedPersonality == "fertile_personality") {
+
+            personalityDesc.innerHTML = "+50% Chance of New Heir";
+
+        }
+
+        if (selectedPersonality == "well_advised_personality") {
+
+            personalityDesc.innerHTML = "+1 Possible Advisors";
+
+        }
+
+        if (selectedPersonality == "benevolent_personality") {
+
+            personalityDesc.innerHTML = "-5% Liberty Desire in Subjects";
+
+        }
+
+        if (selectedPersonality == "zealot_personality") {
+
+            personalityDesc.innerHTML = "+1% Missionary Strength";
+
+        }
+
+        if (selectedPersonality == "pious_personality") {
+
+            personalityDesc.innerHTML = "+1 Yearly Devotion";
+
+        }
+
+        if (selectedPersonality == "lawgiver_personality") {
+
+            personalityDesc.innerHTML = "-0.05 Monthly Autonomy Change";
+
+        }
+
+        if (selectedPersonality == "midas_touched_personality") {
+
+            personalityDesc.innerHTML = "+10% National Tax Modifier";
+
+        }
+
+        if (selectedPersonality == "incorruptible_personality") {
+
+            personalityDesc.innerHTML = "-0.05 Yearly Corruption";
+
+        }
+
+        if (selectedPersonality == "architectural_visionary_personality") {
+
+            personalityDesc.innerHTML = "-10% Construction Cost";
+
+        }
+
+        if (selectedPersonality == "scholar_personality") {
+
+            personalityDesc.innerHTML = "-5% Technology Cost";
+
+        }
+
+        if (selectedPersonality == "entrepreneur_personality") {
+
+            personalityDesc.innerHTML = "+10% Trade Efficiency";
+
+        }
+
+        if (selectedPersonality == "industrious_personality") {
+
+            personalityDesc.innerHTML = "+10% Goods Produced Modifier";
+
+        }
+
+        if (selectedPersonality == "expansionist_personality") {
+
+            personalityDesc.innerHTML = "+15 Global Settler Increase";
+
+        }
+
+        if (selectedPersonality == "charismatic_negotiator_personality") {
+
+            personalityDesc.innerHTML = "+1 Diplomatic Reputation";
+
+        }
+
+        if (selectedPersonality == "silver_tongue_personality") {
+
+            personalityDesc.innerHTML = "+20% Improve Relations";
+
+        }
+
+        if (selectedPersonality == "conqueror_personality") {
+
+            personalityDesc.innerHTML = "-5 Years of Separatism";
+
+        }
+
+        if (selectedPersonality == "tactical_genius_personality") {
+
+            personalityDesc.innerHTML = "+1 Land Leader Maneuver";
+
+        }
+
+        if (selectedPersonality == "bold_fighter_personality") {
+
+            personalityDesc.innerHTML = "+1 Land Leader Shock";
+
+        }
+
+        if (selectedPersonality == "strict_personality") {
+
+            personalityDesc.innerHTML = "+5% Discipline";
+
+        }
+
+        if (selectedPersonality == "inspiring_leader_personality") {
+
+            personalityDesc.innerHTML = "+5% Morale of Armies";
+
+        }
+
+        if (selectedPersonality == "martial_educator_personality") {
+
+            personalityDesc.innerHTML = "-1 Yearly Army Tradition Decay";
+
+        }
+
+        if (selectedPersonality == "navigator_personality") {
+
+            personalityDesc.innerHTML = "+10% Ship Durability";
+
+        }
+
+        if (selectedPersonality == "fierce_negotiator_personality") {
+
+            personalityDesc.innerHTML = "-25% Mercenary Maintenance";
+
+        }
+
+        if (selectedPersonality == "humane_personality") {
+
+            personalityDesc.innerHTML = "+0.05 Mandate Growth Modifier";
+
+        }
+
+        if (selectedPersonality == "babbling_buffoon_personality") {
+
+            personalityDesc.innerHTML = "-1 Diplomatic Reputation";
+
+        }
+
+        if (selectedPersonality == "embezzler_personality") {
+
+            personalityDesc.innerHTML = "+0.05 Yearly Corruption";
+
+        }
+
+        if (selectedPersonality == "infertile_personality") {
+
+            personalityDesc.innerHTML = "-25% Chance of New Heir";
+
+        }
+
+        if (selectedPersonality == "indulgent_personality") {
+
+            personalityDesc.innerHTML = "-10% Trade Efficiency";
+
+        }
+
+        if (selectedPersonality == "sinner_personality") {
+
+            personalityDesc.innerHTML = "-2 Tolerance of the True Faith";
+
+        }
+
+        if (selectedPersonality == "greedy_personality") {
+
+            personalityDesc.innerHTML = "-10% National Tax Modifier";
+
+        }
+
+        if (selectedPersonality == "cruel_personality") {
+
+            personalityDesc.innerHTML = "+2 National Unrest";
+
+        }
+
+        if (selectedPersonality == "naive_enthusiast_personality") {
+
+            personalityDesc.innerHTML = "-20% Improve Relations";
+
+        }
+
+        if (selectedPersonality == "craven_personality") {
+
+            personalityDesc.innerHTML = "-5% Morale of Armies";
+
+        }
+
+        if (selectedPersonality == "loose_lips_personality") {
+
+            personalityDesc.innerHTML = "-20% Foreign Spy Detection";
+
+        }
+
+        if (selectedPersonality == "obsessive_perfectionist_personality") {
+
+            personalityDesc.innerHTML = "+10% Construction Cost";
+
+        }
+
+        if (selectedPersonality == "malevolent_personality") {
+
+            personalityDesc.innerHTML = "+5% Libery Desire in Subjects";
+
+        }
+
+        if (selectedPersonality == "petty_personality") {
+
+            personalityDesc.innerHTML = "-0.05 Mandate Growth Modifier";
+
+        }
+
+    }
+
+    function createFile3 () {
+
+        //Get all info
+
+        file3 = document.getElementById("file3");
+
+        enteredName = document.getElementById("nameUtility").value;
+        enteredTag = document.getElementById("tagUtility").value;
+
+        governmentType = document.getElementById("governmentSelect").value;
+
+        monarchyGovernment = document.getElementById("monarchyGovernment").value;
+        republicGovernment = document.getElementById("republicGovernment").value;
+        theocracyGovernment = document.getElementById("theocracyGovernment").value;
+        tribalGovernment = document.getElementById("tribalGovernment").value;
+
+        primaryCulture = document.getElementById("primaryCulture").value.toLowerCase();
+
+        religion = document.getElementById("religionGroup").value;
+        sunniSchool = document.getElementById("sunniSchool").value;
+        shiaSchool = document.getElementById("shiaSchool").value;
+
+        technologyGroup = document.getElementById("technologyGroup").value;
+
+        mercantilism = document.getElementById("mercantilism").value;
+
+        capitalID = document.getElementById("capitalID").value;
+        fixCapital = document.getElementById("fixCapital").value;
+
+        nationalFocus = document.getElementById("nationalFocus").value;
+
+        armyProfessionalism = document.getElementById("armyProfessionalism").value;
+
+        hisMonName = document.getElementById("hisMonName").value;
+        hisMonDynasty = document.getElementById("hisMonDynasty").value;
+        hisMonAge = document.getElementById("hisMonAge").value;
+
+        hisMonADM = document.getElementById("hisMonADM").value;
+        hisMonDIP = document.getElementById("hisMonDIP").value;
+        hisMonMIL = document.getElementById("hisMonMIL").value;
+
+        hisMonLeaderName = document.getElementById("hisMonLeaderName").value;
+        hisMonLeaderType = document.getElementById("hisMonLeaderType").value;
+        hisMonLeaderFire = document.getElementById("hisMonLeaderFire").value;
+        hisMonLeaderShock = document.getElementById("hisMonLeaderShock").value;
+        hisMonLeaderManuever = document.getElementById("hisMonLeaderManuever").value;
+        hisMonLeaderSiege = document.getElementById("hisMonLeaderSiege").value;
+
+        hisMonPersonality00 = document.getElementById("hisMonPersonality00").value;
+        hisMonPersonality01 = document.getElementById("hisMonPersonality01").value;
+        hisMonPersonality02 = document.getElementById("hisMonPersonality02").value;
+
+        hisHeirPersonality00 = document.getElementById("hisHeirPersonality00").value;
+        hisHeirPersonality01 = document.getElementById("hisHeirPersonality01").value;
+        hisHeirPersonality02 = document.getElementById("hisHeirPersonality02").value;
+
+        //Updates the file name indicator.
+        file3Name.innerHTML = "<b>FILE NAME: "+enteredTag+" - "+enteredName+".txt</b>";
+
+        //Determines the name of the file.
+        file3Name = enteredTag+" - "+enteredName+".txt";
+
+        //Determines the contents of the file.
+        file3Content = "";
+
+        //Set the government type.
+        file3Content += "government = "+governmentType+"&#10;";
+
+        //Sets the specific government.
+        if (governmentType == "monarchy") {
+
+            file3Content += "add_government_reform = "+monarchyGovernment+"&#10;";
+
+        } else if (governmentType == "republic") {
+
+            file3Content += "add_government_reform = "+republicGovernment+"&#10;";
+            
+        } else if (governmentType == "theocracy") {
+
+            file3Content += "add_government_reform = "+theocracyGovernment+"&#10;";
+            
+        } else if (governmentType == "tribal") {
+
+            file3Content += "add_government_reform = "+tribalGovernment+"&#10;";
+            
+        }
+
+        //Sets the primary culture.
+        file3Content += "primary_culture = "+primaryCulture+"&#10;";
+
+        //Sets the accepted cultures.
+        for (i = 1; i < cultureNumber; i++) {
+
+            acceptedCulture = document.getElementById("acceptedCulture"+i).value.toLowerCase();
+
+            if (acceptedCulture == "") {
+
+                //Do nothing.
+
+            } else {
+
+                file3Content += "add_accepted_culture = "+acceptedCulture+"&#10;";
+            
+            }
+
+        }
+
+        //Sets the religion.
+        file3Content += "religion = "+religion+"&#10;";
+
+        //Sets the religous school.
+        if (religion == "sunni") {
+
+            file3Content += "religious_school = "+sunniSchool+"&#10;";
+
+        } else if (religion == "shiite") {
+
+            file3Content += "religious_school = "+shiaSchool+"&#10;";
+
+        }
+
+        //Sets the technology group.
+        file3Content += "technology_group = "+technologyGroup+"&#10;";
+
+        //Sets the historical friends.
+        for (i = 0; i < friendNumber; i++) {
+
+            friend = document.getElementById("historicalFriend"+i).value;
+
+            if (friend == "") {
+
+                //Do nothing.
+
+            } else {
+
+                file3Content += "historical_friend = "+friend+"&#10;";
+
+            }
+
+        }
+
+        //Sets the historical rivals.
+        for (i = 0; i < rivalNumber; i++) {
+
+            rival = document.getElementById("historicalRival"+i).value;
+
+            if (rival == "") {
+
+                //Do nothing.
+
+            } else {
+
+                file3Content += "historical_rival = "+rival+"&#10;";
+
+            }
+
+        }
+
+        //Sets the capital province.
+
+        if (fixCapital == "fixedCapital") {
+            
+            file3Content += "fixed_capital = "+capitalID+"&#10;";
+
+        } else if (fixCapital == "notFixedCapital") {
+
+            file3Content += "capital = "+capitalID+"&#10;";
+
+        }
+
+        //Sets the national focus.
+        if (nationalFocus == "Pick a national focus.") {
+            
+            //Do nothing.
+
+        } else {
+
+            file3Content += "national_focus = "+nationalFocus+"&#10;";
+
+        }
+
+        //Sets the army professionalism.
+        if (armyProfessionalism == "") {
+
+            //Do nothing.
+        } else {
+
+            file3Content += "add_army_professionalism = "+armyProfessionalism+"&#10;";
+
+        }
+
+        //Sets the mercantilism.
+        if (mercantilism == "") {
+
+            //Do nothing.
+
+        } else {
+
+            file3Content += "mercantilism = "+mercantilism+"&#10;";
+
+        }
+        //Setting the date.
+        file3Content += "1444.11.11 = {&#10;";
+
+        //Creating monarch.
+        file3Content += "   monarch = {&#10;";
+
+        file3Content += "       name = "+hisMonName+"&#10;";
+        file3Content += "       dynasty = "+hisMonDynasty+"&#10;";
+        file3Content += "       birth_date = "+hisMonAge+"&#10;";
+        file3Content += "       adm = "+hisMonADM+"&#10;";
+        file3Content += "       dip = "+hisMonDIP+"&#10;";
+        file3Content += "       mil = "+hisMonMIL+"&#10;";
+
+        file3Content += "       leader = { name = "+hisMonLeaderName+"    type = "+hisMonLeaderType+"    fire = "+hisMonLeaderFire+"    shock = "+hisMonLeaderShock+"    manuever = "+hisMonLeaderManuever+"    siege = "+hisMonLeaderSiege+"&#10;";
+
+        //If any personalities exist, clear the scripted ones.
+
+        if (hisMonPersonality00 != "" || hisMonPersonality01 != "" || hisMonPersonality02 != "") {
+
+            file3Content += "   clear_scripted_personalities = yes";
+
+        }
+
+        //Defining monarch personality.
+
+        if (hisMonPersonality00 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisMonPersonality00;
+
+        }
+
+        if (hisMonPersonality01 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisMonPersonality01;
+
+        }
+
+        if (hisMonPersonality02 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisMonPersonality02;
+
+        }
+
+        //Defining heir personality.
+
+        if (hisHeirPersonality00 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisHeirPersonality00;
+
+        }
+
+        if (hisHeirPersonality01 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisHeirPersonality01;
+
+        }
+
+        if (hisHeirPersonality02 != "") {
+
+            file3Content += "   add_ruler_personality = "+hisHeirPersonality02;
+
+        }
+
+        file3Content += "heir = {";
+
+        /*
+
+        clear_scripted_personalities = yes
+	add_ruler_personality = conqueror_personality
+	add_heir_personality = lawgiver_personality
+	heir = {
+
+        */
+        //Determines the contents of the text area.
+        file3.innerHTML = file3Content;
+
+        //Removes the HTML break codes and adds Window break codes.
+        re = /&#10;/gi;
+        file3ContentTXT = file3Content.replace(re, "\r\n");
+
+        //Creates the file.
+        myFile = new Blob([file3ContentTXT], {type: 'text/plain'});
+        //myFile = new Blob([file3Content], {type: 'text/plain'});
+
+        //Accessing Windows properties.
+        window.URL = window.URL || window.webkitURL;
+
+        //Creating the download link.
+        document.getElementById('downloadFile3').setAttribute('href', window.URL.createObjectURL(myFile));
+
+        //Adding the download attribute and linking it to file1.
+        document.getElementById('downloadFile3').setAttribute('download', file3Name);
+
 
     }
 
